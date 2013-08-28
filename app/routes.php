@@ -11,20 +11,8 @@
 |
 */
 
-Route::get(
-    '/{page?}',
-    function ($page = null) {
-
-        $template = $page == 'onas.html' ? 'home' : 'content';
-        return View::make("templates.rss.{$template}")
-            ->with('menu', Menu::all())
-            ->with('content', 'TRESC')
-            ->with('currentpage', $page)
-            ->with('content', Menu::where('pagelink', '=', $page)->firstOrFail()->content)
-            ->with('templateDir', 'templates/rss')
-            ->with('product', Product::all());
-    }
-)->where('page', '(.*\.html)');;
+Route::get('/{page?}', 'HomeController@index')->where('page', '(.*\.html)');
+Route::get('/', 'HomeController@index');
 
 Route::get(
     '/admin/dashboard.html',

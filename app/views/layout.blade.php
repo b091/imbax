@@ -13,7 +13,6 @@
     @stylesheets('bootstrap')
     @javascripts('bootstrap-js')
     <!-- Custom styles for this template -->
-    <link href="jumbotron-narrow.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     @javascripts('bootstrap-ie')
@@ -21,24 +20,29 @@
 
     <style type="text/css">
         a {
-            color:#575E63;
+            color: #575E63;
         }
+
         .btn-info {
             background-color: #444B52;
             border: 1px solid #444B52;
         }
-        .btn-primary  {
+
+        .btn-primary {
             background-color: #C4C8CC;
             border: 1px solid #C4C8CC;
         }
+
         .button-rss-procuct {
             margin-top: 10px;
             padding: 8pt;
         }
+
         .navbar-rss {
             margin-top: 5pt;
             background-color: #ffffff;
         }
+
         .navbar-rss li a {
             padding-top: 35px;
             height: 100px;
@@ -53,6 +57,7 @@
             background-color: #1F2326;
             padding: 5pt;
         }
+
         .topbar-text-rss {
             font-size: 8pt;
             color: #96999b;
@@ -130,37 +135,18 @@
 <div class="row topbar-rss">
     <div class="container">
         <div class="col-xs-6 col-sm-3 topbar-text-rss">
-            Język strony:  <a href=""><i class="famfamfam-flag-pl"></i></a>  <a href=""><i class="famfamfam-flag-se"></i></a>  <a href=""><i class="famfamfam-flag-gb"></i></a>
+            Język strony: <a href=""><i class="famfamfam-flag-pl"></i></a> <a href=""><i class="famfamfam-flag-se"></i></a> <a href=""><i
+                    class="famfamfam-flag-gb"></i></a>
         </div>
         <div class="col-md-9 col-xs-6 col-sm-9">
-            <div class="pull-right topbar-text-rss"><span class="glyphicon glyphicon-earphone"></span> Obsługa klienta: <span style="color: #fff;">+48 504 500 6700</span></div>
+            <div class="pull-right topbar-text-rss"><span class="glyphicon glyphicon-earphone"></span> Obsługa klienta: <span style="color: #fff;">+48 504 500 6700</span>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="container">
-    <nav class="navbar navbar-default navbar-rss" role="navigation">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#"><img src="assets/images/rss_logo.png"></a>
-        </div>
-
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">O nas</a></li>
-                <li class="active"><a href="#">Oferta</a></li>
-                <li><a href="#">Produkty</a></li>
-                <li><a href="#">Galeria</a></li>
-                <li><a href="#">Kontakt</a></li>
-            </ul>
-        </div>
-    </nav>
-</div>
+@include('menu')
+@yield('topmenu')
 
 <div class="container hidden-xs">
     <div class="topinfo-rss">
@@ -181,14 +167,20 @@
     <div class="container">
         <div id="carousel-example-generic" class="carousel slide">
             <div class="carousel-inner">
-                <div class="item">
-                    <img src="" data-src="holder.js/1170x250/auto/#777:#555/text:First slide" alt="First slide">
-                </div>
-                <div class="item">
-                    <img src="" data-src="holder.js/1170x250/auto/#666:#444/text:Second slide" alt="Second slide">
-                </div>
                 <div class="item active">
-                    <img src="assets/images/slide1.png" alt="Third slide">
+                    <img src="assets/images/slide_A.jpg" alt="1 slide">
+                </div>
+                <div class="item">
+                    <img src="assets/images/slide_B.jpg" alt="2 slide">
+                </div>
+                <div class="item">
+                    <img src="assets/images/slide_C.jpg" alt="3 slide">
+                </div>
+                <div class="item">
+                    <img src="assets/images/slide_D.jpg" alt="4 slide">
+                </div>
+                <div class="item">
+                    <img src="assets/images/slide_E.jpg" alt="5 slide">
                 </div>
             </div>
         </div>
@@ -201,9 +193,11 @@
             <li class="active">Łyżka skarpowa RSS STS 1150/700</li>
         </ol>
         <ol class="carousel-indicators pull-right">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
             <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+            <li data-target="#carousel-example-generic" data-slide-to="3" class=""></li>
+            <li data-target="#carousel-example-generic" data-slide-to="4" class=""></li>
         </ol>
     </div>
 </div>
@@ -218,20 +212,14 @@
     <div class="container">
 
         <div class="col-lg-2 col-xs-3">
-            <img src="assets/images/logo_footer.png" class="img-responsive" ></a>
+            <img src="assets/images/logo_footer.png" class="img-responsive"></a>
         </div>
         <div class="col-lg-5">
             <p><strong>At vero eos et accusamus et</strong> iusto odio dignissimos ducimus qui blanditiis praesentium
                 voluptatum deleniti atque corrupti quos dolores et. </p>
         </div>
         <div class="col-lg-5 hidden-xs">
-            <ul class="nav nav-pills pull-right">
-                <li><a href="#">O nas</a></li>
-                <li><a href="#">Oferta</a></li>
-                <li><a href="#">Produkty</a></li>
-                <li><a href="#">Galeria</a></li>
-                <li><a href="#">Kontakt</a></li>
-            </ul>
+            @yield('bottommenu')
         </div>
     </div>
 </div>

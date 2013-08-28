@@ -12,9 +12,13 @@
 */
 
 Route::get(
-    '/',
-    function () {
-        return View::make('hello');
+    '/{page?}.html',
+    function ($page = null) {
+
+        return View::make('home')
+            ->with('menu', Menu::all())
+            ->with('content', 'TRESC')
+            ->with('currentpage', $page);
     }
 );
 
@@ -47,11 +51,22 @@ Route::get(
 );
 
 
-Route::post('/login', function()
-{
-    // Validation? Not in my quickstart!
-    // No, but really, I'm a bad person for leaving that out
-    Auth::attempt( array('email' => Input::get('email'), 'password' => Input::get('password')) );
+Route::post(
+    '/login',
+    function () {
+        // Validation? Not in my quickstart!
+        // No, but really, I'm a bad person for leaving that out
+        Auth::attempt(array('email' => Input::get('email'), 'password' => Input::get('password')));
 
-    return Redirect::to('/dashboard');
-});
+        return Redirect::to('/dashboard');
+    }
+);
+
+
+Route::group(
+    array('before' => 'auth'),
+    function () {
+        \Route::get('elfinder', 'Barryvdh\ElfinderBundle\ElfinderController@showIndex');
+        \Route::any('elfinder/connector', 'Barryvdh\ElfinderBundle\ElfinderController@showConnector');
+    }
+);

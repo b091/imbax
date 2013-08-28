@@ -29,7 +29,7 @@
         <br/>
 
         <div class="thumbnail2 hidden-xs">
-            <img data-src="holder.js/90x70" alt="..." class="pull-left img-responsive">
+            <img src="assets/images/rss_A.jpg" alt="..." class="pull-left img-responsive">
 
             <div class="pull-left" style="">
                 <h4>&nbsp;&nbsp;Łyżka przedsiębierna RSS 700 HD</h4>
@@ -43,7 +43,7 @@
 
         <a href="#">
             <div class="thumbnail2 hidden-sm hidden-md hidden-lg">
-                <img data-src="holder.js/90x70" alt="..." class="pull-left img-responsive">
+                <img src="assets/images/rss_A.jpg" alt="..." class="pull-left img-responsive">
 
                 <div class="col-xs-8 col-sm-9">
                     <h4>Łyżka przedsiębierna RSS 700 HD</h4>
@@ -56,7 +56,7 @@
         <br/>
 
         <div class="thumbnail2 hidden-xs">
-            <img data-src="holder.js/90x70" alt="..." class="pull-left img-responsive">
+            <img src="assets/images/rss_B.jpg" alt="..." class="pull-left img-responsive">
 
             <div class="pull-left" style="">
                 <h4>&nbsp;&nbsp;Łyżka przedsiębierna RSS 700 HD</h4>
@@ -70,7 +70,7 @@
 
         <a href="#">
             <div class="thumbnail2 hidden-sm hidden-md hidden-lg">
-                <img data-src="holder.js/90x70" alt="..." class="pull-left img-responsive">
+                <img src="assets/images/rss_B.jpg" alt="..." class="pull-left img-responsive">
 
                 <div class="col-xs-8 col-sm-9">
                     <h4>Łyżka przedsiębierna RSS 700 HD</h4>
@@ -83,7 +83,7 @@
         <br/>
 
         <div class="thumbnail2 hidden-xs">
-            <img data-src="holder.js/90x70" alt="..." class="pull-left img-responsive">
+            <img src="assets/images/rss_C.jpg" alt="..." class="pull-left img-responsive">
 
             <div class="pull-left" style="">
                 <h4>&nbsp;&nbsp;Łyżka przedsiębierna RSS 700 HD</h4>
@@ -97,7 +97,7 @@
 
         <a href="#">
             <div class="thumbnail2 hidden-sm hidden-md hidden-lg">
-                <img data-src="holder.js/90x70" alt="..." class="pull-left img-responsive">
+                <img src="assets/images/rss_C.jpg" alt="..." class="pull-left img-responsive">
 
                 <div class="col-xs-8 col-sm-9">
                     <h4>Łyżka przedsiębierna RSS 700 HD</h4>
@@ -109,6 +109,60 @@
 
         <br/>
 
+
+        <div class="thumbnail2 hidden-xs">
+            <img src="assets/images/rss_D.jpg" alt="..." class="pull-left img-responsive">
+
+            <div class="pull-left" style="">
+                <h4>&nbsp;&nbsp;Łyżka przedsiębierna RSS 700 HD</h4>
+
+                <p>&nbsp;&nbsp;&nbsp;Consectetur lorem</p>
+            </div>
+            <br/>
+            <a href="#" class="btn-sm btn-primary pull-right">Sprawdż ofertę</a>
+        </div>
+
+
+        <a href="#">
+            <div class="thumbnail2 hidden-sm hidden-md hidden-lg">
+                <img src="assets/images/rss_D.jpg" alt="..." class="pull-left img-responsive">
+
+                <div class="col-xs-8 col-sm-9">
+                    <h4>Łyżka przedsiębierna RSS 700 HD</h4>
+
+                    <p>&nbsp;&nbsp;&nbsp;Consectetur lorem</p>
+                </div>
+            </div>
+        </a>
+
+        <br/>
+
+        <div class="thumbnail2 hidden-xs">
+            <img src="assets/images/rss_E.jpg" alt="..." class="pull-left img-responsive">
+
+            <div class="pull-left" style="">
+                <h4>&nbsp;&nbsp;Łyżka przedsiębierna RSS 700 HD</h4>
+
+                <p>&nbsp;&nbsp;&nbsp;Consectetur lorem</p>
+            </div>
+            <br/>
+            <a href="#" class="btn-sm btn-primary pull-right">Sprawdż ofertę</a>
+        </div>
+
+
+        <a href="#">
+            <div class="thumbnail2 hidden-sm hidden-md hidden-lg">
+                <img src="assets/images/rss_E.jpg" alt="..." class="pull-left img-responsive">
+
+                <div class="col-xs-8 col-sm-9">
+                    <h4>Łyżka przedsiębierna RSS 700 HD</h4>
+
+                    <p>&nbsp;&nbsp;&nbsp;Consectetur lorem</p>
+                </div>
+            </div>
+        </a>
+
+        <br/>
 
     </div>
 </div>

@@ -2,6 +2,6 @@
 
 @section('content')
     @foreach($users as $user)
-        <p>{{ $user->name }}</p>
+        <p> login:{{ $user->username }} email: {{ $user->email }}</p>
     @endforeach
 @stop

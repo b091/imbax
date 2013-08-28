@@ -113,7 +113,8 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-        'Basset\BassetServiceProvider'
+        'Basset\BassetServiceProvider',
+        'Barryvdh\ElfinderBundle\ElfinderBundleServiceProvider'
 
 	),
 

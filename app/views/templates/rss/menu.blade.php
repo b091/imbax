@@ -15,7 +15,7 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav navbar-right">
                 @foreach($menu as $item)
-                    <li class="@if ($currentpage.'.html' === $item->pagelink ) active @endif"><a href="{{ $item->pagelink }}">{{ $item->title }}</a></li>
+                    <li class="@if ($currentpage === $item->pagelink ) active @endif"><a href="{{ $item->pagelink }}">{{ $item->title }}</a></li>
                 @endforeach
             </ul>
         </div>

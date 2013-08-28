@@ -12,30 +12,21 @@
 */
 
 Route::get(
-    '/{page?}.html',
+    '/{page?}',
     function ($page = null) {
 
-        return View::make('templates.rss.home')
+        $template = $page == 'onas.html' ? 'home' : 'content';
+        return View::make("templates.rss.{$template}")
             ->with('menu', Menu::all())
             ->with('content', 'TRESC')
             ->with('currentpage', $page)
-            ->with('content', Menu::where('pagelink', '=', $page.'.html')->firstOrFail()->content)
+            ->with('content', Menu::where('pagelink', '=', $page)->firstOrFail()->content)
             ->with('product', Product::all());
     }
-);
-
-
-Route::get(
-    '/users',
-    function () {
-        $users = User::all();
-
-        return View::make('users')->with('users', $users);
-    }
-);
+)->where('page', '(.*\.html)');;
 
 Route::get(
-    '/dashboard',
+    '/admin/dashboard.html',
     array(
         'before' => 'auth',
         function () {
@@ -44,26 +35,23 @@ Route::get(
     )
 );
 
-
 Route::get(
-    '/login',
+    '/admin.html',
     function () {
         return View::make('admin.login');
     }
 );
 
-
 Route::post(
-    '/login',
+    '/admin.html',
     function () {
         // Validation? Not in my quickstart!
         // No, but really, I'm a bad person for leaving that out
         Auth::attempt(array('email' => Input::get('email'), 'password' => Input::get('password')));
 
-        return Redirect::to('/dashboard');
+        return Redirect::to('/admin/dashboard');
     }
 );
-
 
 Route::group(
     array('before' => 'auth'),

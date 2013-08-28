@@ -21,6 +21,7 @@ Route::get(
             ->with('content', 'TRESC')
             ->with('currentpage', $page)
             ->with('content', Menu::where('pagelink', '=', $page)->firstOrFail()->content)
+            ->with('templateDir', 'templates/rss')
             ->with('product', Product::all());
     }
 )->where('page', '(.*\.html)');;

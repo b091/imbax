@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/famfamfam_flags/famfamfam-flags.css" rel="stylesheet">
-    <link rel="shortcut icon" href="../../assets/ico/favicon.png">
+    <link rel="shortcut icon" href="{{$templateDir}}/ico/favicon.png">
 
     <title>IMBAX</title>
     @stylesheets('bootstrap')
@@ -17,7 +17,7 @@
     <!--[if lt IE 9]>
     @javascripts('bootstrap-ie')
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="assets/css/rss.css" />
+    <link rel="stylesheet" type="text/css" href="{{$templateDir}}/css/rss.css" />
 </head>
 
 <body>
@@ -64,7 +64,7 @@
     <div class="container">
 
         <div class="col-lg-2 col-xs-3">
-            <img src="assets/images/logo_footer.png" class="img-responsive"></a>
+            <img src="{{$templateDir}}/images/logo_footer.png" class="img-responsive"></a>
         </div>
         <div class="col-lg-5">
             <p><strong>At vero eos et accusamus et</strong> iusto odio dignissimos ducimus qui blanditiis praesentium

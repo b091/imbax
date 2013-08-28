@@ -12,7 +12,7 @@
         <br/>
         @foreach($product as $item)
         <div class="thumbnail2 hidden-xs">
-            <img src="assets/images/{{$item->photo}}" alt="..." class="pull-left img-responsive">
+            <img src="{{$templateDir}}/images/{{$item->photo}}" alt="..." class="pull-left img-responsive">
 
             <div class="pull-left" style="">
                 <h4>&nbsp;&nbsp; {{$item->name}}</h4>
@@ -26,7 +26,7 @@
 
         <a href="#">
             <div class="thumbnail2 hidden-sm hidden-md hidden-lg">
-                <img src="assets/images/rss_A.jpg" alt="..." class="pull-left img-responsive">
+                <img src="{{$templateDir}}/images/rss_A.jpg" alt="..." class="pull-left img-responsive">
 
                 <div class="col-xs-8 col-sm-9">
                     <h4>{{$item->name}}</h4>

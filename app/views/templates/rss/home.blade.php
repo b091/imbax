@@ -1,12 +1,10 @@
 @extends('templates.rss.layout')
 
 @section('content')
-
 <div class="row">
     <div class="col-lg-6">
         {{$content}}
     </div>
-
 
     <div class="col-lg-6">
         <br/>
@@ -37,7 +35,6 @@
         </a>
         <br/>
         @endforeach
-
     </div>
 </div>
 @stop

@@ -145,7 +145,7 @@
     </div>
 </div>
 
-@include('menu')
+@include('templates.rss.menu')
 @yield('topmenu')
 
 <div class="container hidden-xs">

@@ -15,10 +15,12 @@ Route::get(
     '/{page?}.html',
     function ($page = null) {
 
-        return View::make('home')
+        return View::make('templates.rss.home')
             ->with('menu', Menu::all())
             ->with('content', 'TRESC')
-            ->with('currentpage', $page);
+            ->with('currentpage', $page)
+            ->with('content', Menu::where('pagelink', '=', $page.'.html')->firstOrFail()->content)
+            ->with('product', Product::all());
     }
 );
 
@@ -37,7 +39,7 @@ Route::get(
     array(
         'before' => 'auth',
         function () {
-            return View::make('dashboard');
+            return View::make('admin.dashboard');
         }
     )
 );
@@ -46,7 +48,7 @@ Route::get(
 Route::get(
     '/login',
     function () {
-        return View::make('login');
+        return View::make('admin.login');
     }
 );
 

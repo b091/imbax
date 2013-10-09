@@ -54,14 +54,11 @@ a {
 }
 
 .carousel-rss {
-    font-size: 21px;
-    text-align: left;
     padding: 0px 15px 0px;
     font-size: 16px;
     text-align: center;
     text-shadow: 0 1px 0 rgba(0, 0, 0, .15);
     color: #cdbfe3;
-    background-color: #33383C;
     background-image: url("../images/rss_carousel_bg.jpg");
 }
 
@@ -69,6 +66,15 @@ a {
     width: auto;
     position: inherit;
 }
+
+.topbanner-rss {
+    padding: 15px 15px 15px;
+    font-size: 28px;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, .15);
+    color: #ffffff;
+    background-image: url("../images/rss_carousel_bg.jpg");
+}
+
 
 .breadcrumb-rss {
     background-color: transparent;
@@ -105,3 +111,7 @@ a {
 .thumbnail2 p {
     color: #c2c2c2;
 }
+
+
+
+@font-face { font-family: rss-gothic; src: url('../fonts/1532.ttf'); }

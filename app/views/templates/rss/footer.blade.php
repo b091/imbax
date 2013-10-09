@@ -2,7 +2,7 @@
     <div class="container">
 
         <div class="col-lg-2 col-xs-3">
-            <a href="/"><img src="{{$templateDir}}/images/logo_footer.png" class="img-responsive"></a>
+            <a href="/"><img src="/{{$templateDir}}/images/logo_footer.png" class="img-responsive"></a>
         </div>
         <div class="col-lg-5">
             <p><strong>At vero eos et accusamus et</strong> iusto odio dignissimos ducimus qui blanditiis praesentium

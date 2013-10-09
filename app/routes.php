@@ -10,8 +10,13 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+Route::get('/{lang}/{page?}', 'HomeController@index')
+    ->where(array('lang' => '[a-z]{2}', 'page' => '(.*\.html)'));
 
-Route::get('/{page?}', 'HomeController@index')->where('page', '(.*\.html)');
+
+
+    //->where('page', '(.*\.html)');
+//Route::get('/{page?}', 'HomeController@index')->where('page', '(.*\.html)');
 Route::get('/', 'HomeController@index');
 
 Route::get(

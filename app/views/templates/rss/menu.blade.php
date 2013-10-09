@@ -9,13 +9,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/"><img src="{{$templateDir}}/images/rss_logo.png"></a>
+            <a class="navbar-brand" href="/"><img src="/{{$templateDir}}/images/rss_logo_top.png" class="img-responsive"></a>
         </div>
 
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav navbar-right">
                 @foreach($menu as $item)
-                    <li class="@if ($currentpage === $item->pagelink ) active @endif"><a href="{{ $item->pagelink }}">{{ $item->title }}</a></li>
+                    <li class="@if ($currentpage === $item->pagelink ) active @endif"><a href="/{{$currentlang}}/{{ $item->pagelink }}">{{ $item->title }}</a></li>
                 @endforeach
             </ul>
         </div>
@@ -26,7 +26,7 @@
 @section('bottommenu')
 <ul class="nav nav-pills pull-right">
     @foreach($menu as $item)
-        <li><a href="#">{{ $item->title }}</a></li>
+        <li><a href="{{ $item->pagelink }}">{{ $item->title }}</a></li>
     @endforeach
 </ul>
 @stop

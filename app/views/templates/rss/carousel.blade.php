@@ -3,19 +3,19 @@
         <div id="carousel-example-generic" class="carousel slide">
             <div class="carousel-inner">
                 <div class="item active">
-                    <img src="{{$templateDir}}/images/slide_A.jpg" alt="1 slide">
+                    <img src="/{{$templateDir}}/images/slide_A.jpg" alt="1 slide">
                 </div>
                 <div class="item">
-                    <img src="{{$templateDir}}/images/slide_B.jpg" alt="2 slide">
+                    <img src="/{{$templateDir}}/images/slide_B.jpg" alt="2 slide">
                 </div>
                 <div class="item">
-                    <img src="{{$templateDir}}/images/slide_C.jpg" alt="3 slide">
+                    <img src="/{{$templateDir}}/images/slide_C.jpg" alt="3 slide">
                 </div>
                 <div class="item">
-                    <img src="{{$templateDir}}/images/slide_D.jpg" alt="4 slide">
+                    <img src="/{{$templateDir}}/images/slide_D.jpg" alt="4 slide">
                 </div>
                 <div class="item">
-                    <img src="{{$templateDir}}/images/slide_E.jpg" alt="5 slide">
+                    <img src="/{{$templateDir}}/images/slide_E.jpg" alt="5 slide">
                 </div>
             </div>
         </div>

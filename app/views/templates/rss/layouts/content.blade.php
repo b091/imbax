@@ -4,5 +4,6 @@
 
 <div class="row">
     {{$content}}
+    <br/>
 </div>
 @stop

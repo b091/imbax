@@ -6,8 +6,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/famfamfam_flags/famfamfam-flags.css" rel="stylesheet">
-    <link rel="shortcut icon" href="{{$templateDir}}/ico/favicon.png">
+    <link href="/assets/famfamfam_flags/famfamfam-flags.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/{{$templateDir}}/ico/favicon.png">
 
     <title>IMBAX</title>
     @stylesheets('bootstrap')
@@ -17,7 +17,7 @@
     <!--[if lt IE 9]>
     @javascripts('bootstrap-ie')
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="{{$templateDir}}/css/rss.css" />
+    <link rel="stylesheet" type="text/css" href="/{{$templateDir}}/css/rss.css" />
 </head>
 
 <body>
@@ -25,11 +25,13 @@
 <div class="row topbar-rss">
     <div class="container">
         <div class="col-xs-6 col-sm-3 topbar-text-rss">
-            Język strony: <a href=""><i class="famfamfam-flag-pl"></i></a> <a href=""><i class="famfamfam-flag-se"></i></a> <a href=""><i
-                    class="famfamfam-flag-gb"></i></a>
+            {{Lang::get('label.choose-language')}}:
+            @foreach($langs as $item)
+                <a href="/{{$item->code}}/"><i class="famfamfam-flag-{{$item->code}}"></i></a>
+            @endforeach
         </div>
         <div class="col-md-9 col-xs-6 col-sm-9">
-            <div class="pull-right topbar-text-rss"><span class="glyphicon glyphicon-earphone"></span> Obsługa klienta: <span style="color: #fff;">+48 504 500 6700</span>
+            <div class="pull-right topbar-text-rss"><span class="glyphicon glyphicon-earphone"></span> {{Lang::get('label.customer-service')}}  : <span style="color: #fff;">+48 504 500 6700</span>
             </div>
         </div>
     </div>
@@ -37,23 +39,8 @@
 
 @include('templates.rss.menu')
 @yield('topmenu')
+@include('templates.rss.topbanner')
 
-<div class="container hidden-xs">
-    <div class="topinfo-rss">
-        <span>Łyżki do koparek</span><span style="color: #FFC04D;"> Real Steel Sweden</span>
-        <a class="btn btn-sm btn-warning pull-right button-rss-procuct" href="#">Zobacz nasze produkty</a></p>
-    </div>
-</div>
-
-
-<div class="container hidden-sm hidden-md hidden-lg">
-    <div class="topinfo-rss" style="border-bottom: 1px solid #e1e1e8 !important;">
-        <span>Łyżki do koparek</span><br/><span style="color: #FFC04D;"> Real Steel Sweden</span>
-        <a class="btn btn-warning btn-sm pull-right" href="#">Zobacz nasze produkty</a></p>
-    </div>
-</div>
-
-@include('templates.rss.carousel')
 
 <div class="container">
     @yield('content')

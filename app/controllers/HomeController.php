@@ -5,24 +5,29 @@ class HomeController extends BaseController
 
 //    protected $layout = 'base';
 
-    public function index($page = null)
+    public function index($lang = 'pl', $pagelink = null)
     {
-        $template =  'content';
 
-        if($page === null or $page === 'onas.html')
+        App::setLocale($lang);
+
+        if ($pagelink === null)
         {
-            $template = 'home';
-            $page = 'onas.html';
+            $pagelink = Menu::whereRaw('mainpage = ? AND lang = ?', array(true, $lang))->firstOrFail()->pagelink;
         }
 
-        $content = Menu::where('pagelink', '=', $page)->firstOrFail()->content;
+        $menu = Menu::whereRaw('pagelink = ? AND lang = ?', array($pagelink, $lang))->firstOrFail();
 
-        return View::make("templates.rss.{$template}")
-            ->with('menu', Menu::all())
+        $asd = Menu::whereRaw('lang = ?', array($lang))->get();
+
+
+        return View::make("templates.rss.layouts.{$menu->layout}")
+            ->with('menu', $asd)
             ->with('content', 'TRESC')
-            ->with('currentpage', $page)
-            ->with('content', $content)
+            ->with('currentpage', $pagelink)
+            ->with('content', $menu->content)
             ->with('templateDir', 'templates/rss')
-            ->with('product', Product::all());
+            ->with('product', Product::all())
+            ->with('langs', Langs::all())
+            ->with('currentlang', $lang);
     }
 }

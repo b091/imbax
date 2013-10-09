@@ -16,12 +16,17 @@ class CreateMenuTable extends Migration {
 		{
 			$table->increments('id');
             $table->integer('parent_id')->nullable();
+            $table->enum('layout', array('contact', 'home', 'content', 'products', 'gallery'));
             $table->string('title', 100);
             $table->text('content') ;
             $table->string('pagelink');
             $table->string('module');
             $table->string('method');
+            $table->string('lang');
+            $table->boolean('mainpage')->default(false);
 			$table->timestamps();
+
+            //$table->foreign('lang')->references('id')->on('lang');
 		});
 	}
 

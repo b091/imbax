@@ -17,6 +17,8 @@
     <!--[if lt IE 9]>
     @javascripts('bootstrap-ie')
     <![endif]-->
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,700,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="/{{$templateDir}}/css/rss.css" />
 </head>
 

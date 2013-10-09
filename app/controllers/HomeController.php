@@ -23,7 +23,7 @@ class HomeController extends BaseController
         return View::make("templates.rss.layouts.{$menu->layout}")
             ->with('menu', $asd)
             ->with('content', 'TRESC')
-            ->with('currentpage', $pagelink)
+            ->with('currentpage', $menu)
             ->with('content', $menu->content)
             ->with('templateDir', 'templates/rss')
             ->with('product', Product::all())

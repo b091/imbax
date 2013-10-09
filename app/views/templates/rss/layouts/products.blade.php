@@ -5,12 +5,15 @@
 <style type="text/css">
 
     .asd {
-        background-color: #FFFFFF;
-        border-color: #DDDDDD;
-        border-radius: 4px 4px 0 0;
-        border-width: 1px;
-        box-shadow: none;
+        border-radius: 4px 4px 4px 4px;
+        /*border-width: 1px;*/
+        /*box-shadow: none;*/
+        border: 1px solid #DDDDDD;
+        border-top: none;
+    }
 
+    .asd>li {
+        border-top: 1px solid #DDDDDD;
     }
 
 </style>
@@ -20,17 +23,16 @@
 <br/>
 <div class="row">
     <div class="col-md-3">
-        <ul class="nav nav-stacked">
 
-            @foreach($product as $item)
-            <li><a href="">{{$item->name}}</a></li>
-            @endforeach
+@include('templates.rss.menu')
+@yield('leftmenu')
 
-        </ul>
     </div>
 
     <div class="col-md-6">
-        dsa
+        <h3>Łyżka głęboka</h3>
+        <br/>
+        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
     </div>
 </div>
 <br/>

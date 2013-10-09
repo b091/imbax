@@ -1,4 +1,3 @@
-
 @section('topmenu')
 <div class="container">
     <nav class="navbar navbar-default navbar-rss" role="navigation">
@@ -15,7 +14,7 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav navbar-right">
                 @foreach($menu as $item)
-                    <li class="@if ($currentpage === $item->pagelink ) active @endif"><a href="/{{$currentlang}}/{{ $item->pagelink }}">{{ $item->title }}</a></li>
+                <li class="@if ($currentpage->pagelink === $item->pagelink ) active @endif"><a href="/{{$currentlang}}/{{ $item->pagelink }}">{{$item->title}}</a></li>
                 @endforeach
             </ul>
         </div>
@@ -26,7 +25,16 @@
 @section('bottommenu')
 <ul class="nav nav-pills pull-right">
     @foreach($menu as $item)
-        <li><a href="{{ $item->pagelink }}">{{ $item->title }}</a></li>
+    <li><a href="{{ $item->pagelink }}">{{$item->title}}</a></li>
+    @endforeach
+</ul>
+@stop
+
+
+@section('leftmenu')
+<ul class="nav nav-stacked asd">
+    @foreach($product as $key => $item)
+    <li class="@if ($key == 0) active @endif"><a href="">{{$item->name}}</a></li>
     @endforeach
 </ul>
 @stop

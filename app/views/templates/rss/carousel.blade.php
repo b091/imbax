@@ -22,11 +22,6 @@
     </div>
 
     <div class="container">
-        <ol class="breadcrumb breadcrumb-rss pull-left">
-            <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
-            <li><a href="#">Produkty</a></li>
-            <li class="active">Łyżka skarpowa RSS STS 1150/700</li>
-        </ol>
         <ol class="carousel-indicators pull-right">
             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
             <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>

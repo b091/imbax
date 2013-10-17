@@ -16,7 +16,7 @@ class CreateProductTable extends Migration {
 		{
 			$table->increments('id');
             $table->string('name');
-            $table->string('description')->default('');
+            $table->longText('description');
             $table->string('short_description')->default('');
             $table->string('photo')->default('test.jpg');
 			$table->timestamps();

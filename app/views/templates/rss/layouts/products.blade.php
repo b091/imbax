@@ -12,9 +12,18 @@
         border-top: none;
     }
 
-    .asd>li {
+    .asd > li {
         border-top: 1px solid #DDDDDD;
     }
+
+    .bs-sidebar .nav > .active > a, .bs-sidebar .nav > .active:hover > a, .bs-sidebar .nav > .active:focus > a {
+        background-color: #33383D;
+        color: #ffffff;
+        /*border-right: 1px solid #563D7C;*/
+        /*color: #563D7C;*/
+        /*font-weight: bold;*/
+    }
+
 
 </style>
 
@@ -24,15 +33,28 @@
 <div class="row">
     <div class="col-md-3">
 
-@include('templates.rss.menu')
-@yield('leftmenu')
+        @include('templates.rss.menu')
+        @yield('leftmenu')
 
     </div>
 
-    <div class="col-md-6">
-        <h3>Łyżka głęboka</h3>
-        <br/>
-        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+    <div class="col-md-6" id="scroll-pane" data-spy="scroll" data-target="#left-navbar">
+
+        @foreach($product as $key => $item)
+        <div>
+            <h2 id="product{{$key}}">{{$item->name}}</h2>
+            <br/>
+            {{$item->description}}
+            <br/>
+            <br/>
+            <img src="/{{$templateDir}}/images/{{$item->photo}}" alt="..." class="pull-left img-responsive"/>
+            <br/><br/><br/>
+            <br/><br/><br/>
+            <br/><br/><br/>
+        </div>
+        @endforeach
+
+
     </div>
 </div>
 <br/>

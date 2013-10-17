@@ -7,8 +7,8 @@ class MenuTableSeeder extends Seeder
     {
         $items = array(
             array(
-                'title' => 'O nas',
-                'pagelink' => 'onas.html',
+                'title' => 'Oferta',
+                'pagelink' => 'oferta.html',
                 'module' => 'BaseControler',
                 'method' => 'Index',
                 'lang' => 'pl',
@@ -34,16 +34,6 @@ class MenuTableSeeder extends Seeder
                     </p>
                     <a class="btn btn-sm btn-info" href="#">Czytaj więcej</a>
                 '
-            ),
-            array(
-                'title' => 'Oferta',
-                'pagelink' => 'oferta.html',
-                'module' => 'BaseControler',
-                'method' => 'Index',
-                'lang' => 'pl',
-                'layout' => 'content',
-                'mainpage' => 0,
-                'content' => '<h3>Oferta</h3>'
             ),
             array(
                 'title' => 'Produkty',
@@ -93,8 +83,8 @@ class MenuTableSeeder extends Seeder
                 '
             ),
             array(
-                'title' => 'About Us',
-                'pagelink' => 'about-us.html',
+                'title' => 'Offer',
+                'pagelink' => 'offer.html',
                 'module' => 'BaseControler',
                 'method' => 'Index',
                 'lang' => 'gb',

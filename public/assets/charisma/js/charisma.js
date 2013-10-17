@@ -1,3 +1,13 @@
+
+$(document).ready(function(){
+
+$('.btn-menu-add').click(function(e){
+		e.preventDefault();
+		$('#menu-add').modal('show');
+	});
+});
+
+
 $(document).ready(function(){
 	//themes, change CSS with JS
 	//default theme(CSS) is cerulean, change it if needed
@@ -18,7 +28,7 @@ $(document).ready(function(){
 	
 	function switch_theme(theme_name)
 	{
-		$('#bs-css').attr('href','assets/charisma/css/bootstrap-'+theme_name+'.css');
+		$('#bs-css').attr('href','/assets/charisma/css/bootstrap-'+theme_name+'.css');
 	}
 	
 	//ajax menu checkbox

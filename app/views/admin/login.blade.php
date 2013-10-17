@@ -1,23 +1,32 @@
-@extends('layout')
+@extends('admin.layout')
 
 @section('content')
 
-<div class="container">
-    <form class="form-signin form-horizontal" method="post" action="/login">
-      <h2 class="">Please sign in</h2>
-      <div class="control-group ">
-        <label class="control-label" for="email">Email:</label>
-        <div class="controls">
-          <input type="text" id="email" name="email" placeholder="Email address" value="">
-        </div>
-      </div>
-      <div class="control-group ">
-          <label class="control-label" for="password">Password:</label>
-          <div class="controls">
-            <input type="password" id="password" name="password" placeholder="Password" value="">
-          </div>
-      </div>
-      <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+<div class="well span5 center login-box">
+    <div class="alert alert-info">
+        Please login with your Username and Password.
+    </div>
+    <form class="form-horizontal" action="login.html" method="post">
+        <fieldset>
+            <div class="input-prepend" title="Username" data-rel="tooltip">
+                <span class="add-on"><i class="icon-user"></i></span><input autofocus class="input-large span10" name="email" id="username" type="text" value=""/>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="input-prepend" title="Password" data-rel="tooltip">
+                <span class="add-on"><i class="icon-lock"></i></span><input class="input-large span10" name="password" id="password" type="password" value=""/>
+            </div>
+            <div class="clearfix"></div>
+
+            <div class="input-prepend">
+                <label class="remember" for="remember"><input type="checkbox" id="remember"/>Remember me</label>
+            </div>
+            <div class="clearfix"></div>
+
+            <p class="center span5">
+                <button type="submit" class="btn btn-primary">Login</button>
+            </p>
+        </fieldset>
     </form>
-  </div> <!-- /container -->
+</div><!--/span-->
 @stop

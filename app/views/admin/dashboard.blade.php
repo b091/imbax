@@ -1,20 +1,6 @@
 @extends('admin.layout')
 
 @section('content')
-PANEL CONTENET
-
-
-
-<div>
-	<ul class="breadcrumb">
-		<li>
-			<a href="#">Home</a> <span class="divider">/</span>
-		</li>
-		<li>
-			<a href="#">File Manager</a>
-		</li>
-	</ul>
-</div>
 
 <div class="row-fluid sortable">
 	<div class="box span12">
@@ -32,6 +18,5 @@ PANEL CONTENET
 	</div><!--/span-->
 
 </div><!--/row-->
-
 
 @stop

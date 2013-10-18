@@ -11,6 +11,10 @@ Route::get('/admin/{lang}/{page?}', 'AdminController@index')
 Route::post('/admin/{lang}/{page?}', 'AdminController@index')
     ->where(array('lang' => '[a-z]{2}', 'page' => '(.*\.html)'));
 
+Route::get('/admin/{lang}/{page}/{param?}', 'AdminController@index')
+    ->where(array('lang' => '[a-z]{2}', 'page' => '[a-z]+'));
+
+
 Route::get(
     '/admin',
     function () {

@@ -2,6 +2,12 @@
 
 @section('content')
 
+Hello!
+
+@stop
+
+@section('filemanager')
+
 <div class="row-fluid sortable">
 	<div class="box span12">
 		<div class="box-header well" data-original-title>

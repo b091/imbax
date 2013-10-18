@@ -40,6 +40,8 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
+    <link href="/assets/famfamfam_flags/famfamfam-flags.css" rel="stylesheet">
+
     <!-- The fav icon -->
     <link rel="shortcut icon" href="/assets/charisma/img/favicon.ico">
 
@@ -73,6 +75,7 @@
     </footer>
 
     @include('admin.forms.menu')
+    @yield('modalmenu')
 
 </div>
 

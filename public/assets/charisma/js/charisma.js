@@ -1,10 +1,22 @@
 
 $(document).ready(function(){
 
-$('.btn-menu-add').click(function(e){
-		e.preventDefault();
-		$('#menu-add').modal('show');
-	});
+    $('.btn-menu-add').click(function(e){
+            e.preventDefault();
+            $('#menu-add').modal('show');
+    });
+
+    $('.btn-product-add').click(function(e){
+            e.preventDefault();
+            $('#product-add').modal('show');
+    });
+
+    $('.btn-gallery-add').click(function(e){
+            e.preventDefault();
+            $('#gallery-add').modal('show');
+    });
+
+
 });
 
 

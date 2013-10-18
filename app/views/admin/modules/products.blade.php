@@ -12,6 +12,7 @@
 
             <div class="box-icon">
                 <a href="#" class="btn btn-product-add btn-round"><i class="icon-plus"></i></a>
+                <a href="#" class="btn btn-product-setting btn-round"><i class="icon-cog"></i></a>
                 <a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
             </div>
         </div>
@@ -54,6 +55,19 @@
     </div>
 </div>
 
+<div id="product-settings" class="modal hide">
+    <div class="modal-header">
+        <a href="#" data-dismiss="modal" aria-hidden="true" class="close">×</a>
+         <h3>Delete</h3>
+    </div>
+    <div class="modal-body">
+        <p>Ykuyfyjft</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#" id="btnYes" class="btn danger">Yes</a>
+      <a href="#" data-dismiss="modal" aria-hidden="true" class="btn secondary">No</a>
+    </div>
+</div>
 
 @include('admin.forms.product')
 @yield('productmodal')

@@ -91,7 +91,7 @@ class AdminController extends Controller
             case 'products' :
                 $view->with('products', Product::whereRaw('menu_id = ?', array($id))->get());
                 break;
-            CASE 'gallery' :
+            case 'gallery' :
                 $view->with('gallery', Gallery::whereRaw('menu_id = ?', array($id))->get());
                 break;
         }

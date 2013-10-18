@@ -17,12 +17,12 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Konfiguracja</a></li>
+                        <li><a href="#"><i class="icon-cog"></i> Konfiguracja</a></li>
                         <li class="divider"></li>
                         @foreach($langs as $item)
                             <li><a href="/admin/{{$item->code}}/dashboard.html"><i class="famfamfam-flag-{{$item->code}}"></i> {{$item->name}}</a></li>
                         @endforeach
-                        <li><a href="/admin/logout.html">Logout</a></li>
+                        <li><a href="/admin/logout.html"><i class="icon-off"></i> Logout</a></li>
                     </ul>
                 </div>
             <?php
@@ -44,7 +44,7 @@
             </li>
 
             @foreach($menu as $item)
-                <li class="ajax-link"><a href="/admin/{{$lang}}/menu/{{$item->id}}">{{$item->title}}</a> </li>
+                <li class="ajax-link"><a href="/admin/{{$lang}}/menu/{{$item->id}}"> {{$item->title}}</a> </li>
             @endforeach
 
         </ul>

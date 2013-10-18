@@ -18,12 +18,12 @@
                 <div class="control-group">
 
                     <div class="control-group">
-                        <label class="control-label" for="fileInput">File input</label>
+                        <label class="control-label" for="fileInput">Załącznik</label>
                         <div class="controls">
                             <div id="uniform-fileInput" class="uploader">
                                 <input id="fileInput" class="input-file uniform_on" type="file" size="19" style="opacity: 0;" name="photo">
-                                <span class="filename" style="-moz-user-select: none;">No file selected</span>
-                                <span class="action" style="-moz-user-select: none;">Choose File</span>
+                                <span class="filename" style="-moz-user-select: none;">Nie wybrano pliku</span>
+                                <span class="action" style="-moz-user-select: none;">Z dysku</span>
                             </div>
                         </div>
                     </div>
@@ -33,8 +33,8 @@
     </div>
 
     <div class="modal-footer">
-        <a href="#" class="btn" data-dismiss="modal">Close</a>
-        <a href="#" onclick="$('#gallery-add-form').submit();" class="btn btn-primary">Save changes</a>
+        <a href="#" class="btn" data-dismiss="modal">Zamknij</a>
+        <a href="#" onclick="$('#gallery-add-form').submit();" class="btn btn-primary">Zapisz</a>
     </div>
 </div>
 @stop

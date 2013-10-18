@@ -223,6 +223,23 @@ $(document).ready(function(){
     });
 
 
+    $('.btn-product-option-edit').click(function(e){
+        e.preventDefault();
+        $('#product-option-add').modal('show');
+        //var ttt = $p  roductsoptions}};
+//        var aaa = $(this).data('item');
+//        console.log('>>>>>',aaa,'<<<')
+//    console.log($.parseJSON(aaa));
+//        $('#product-option-add-form').loadJSON({
+//            title:'dupa'
+//        });
+//        for (var i in data) {
+//                $('input[name="'+i+'"]').val(data[i]);
+//            }
+    });
+
+
+
     $('.confirm-delete').on('click', function(e) {
         e.preventDefault();
         $('#confirmModal').data('id', $(this).data('id')).data('link', $(this).data('link')).modal('show');

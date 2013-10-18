@@ -5,24 +5,27 @@ class ProductController extends Controller
 
     public function add($lang)
     {
-         $menu = new Product();
+        $product = new Product();
 
-         $menu->title = Input::get('title');
-         $menu->content = Input::get('content', '');
-         $menu->pagelink = Input::get('pagelink');
-         $menu->lang = $lang;
-         $menu->mainpage = Input::get('mainpage', false);
 
-         $menu->save();
+        $product->name = Input::get('title');
+        $product->description = Input::get('content', '');
+        $product->specjal = Input::get('specjal', false) == 'on';
+        $product->menu_id = Input::get('menu_id');
+        $options = Input::get('options');
 
-         return Redirect::to($_SERVER['HTTP_REFERER']);
+
+        $product->save();
+
+        $product->options()->sync($options);
+
+        return Redirect::to($_SERVER['HTTP_REFERER']);
     }
 
     public function update()
     {
 
     }
-
 
 
     public function remove()

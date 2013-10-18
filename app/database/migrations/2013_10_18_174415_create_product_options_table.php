@@ -17,10 +17,10 @@ class CreateProductOptionsTable extends Migration {
         {
             $table->increments('id');
             $table->integer('product_id')->unsigned()->index();
-            $table->integer('option_id')->unsigned()->index();
+            $table->integer('products_options_id')->unsigned()->index();
 
             $table->foreign('product_id')->references('id')->on('product');
-            $table->foreign('option_id')->references('id')->on('products_options');
+            $table->foreign('products_options_id')->references('id')->on('products_options');
         });
 	}
 

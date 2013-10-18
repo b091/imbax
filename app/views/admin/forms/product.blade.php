@@ -8,17 +8,19 @@
         <div class="box-content">
             <form class="form-horizontal" method="post" action="/admin/{{$lang}}/product/add.html" id="product-add-form">
 
+                <input type="hidden" name="menu_id" value="{{$menuelement->id}}"/>
+
                 <div class="control-group">
                     <label class="control-label" for="typeahead">Nazwa</label>
                     <div class="controls">
-                        <input type="text" class="">
+                        <input type="text" name="title">
                     </div>
                 </div>
 
                 <div class="control-group">
                     <label class="control-label" for="typeahead">Treść</label>
                     <div class="controls">
-                        <textarea></textarea>
+                        <textarea name="content"></textarea>
                     </div>
                 </div>
 
@@ -29,7 +31,7 @@
                         <label class="checkbox inline">
                             <div class="checker">
                                 <span>
-                                <input type="checkbox" value="{{$item->id}}" style="opacity: 0;">
+                                <input type="checkbox" value="{{$item->id}}" name="options[]" style="opacity: 0;">
                                 </span>
                             </div>
                             {{$item->title}}
@@ -54,7 +56,7 @@
     </div>
     <div class="modal-footer">
         <a href="#" class="btn" data-dismiss="modal">Anuluj</a>
-        <a href="#" onclick="$('#product-add-form').submit()" class="btn btn-primary">Zspisz</a>
+        <a href="#" onclick="$('#product-add-form').submit()" class="btn btn-primary">Zapisz</a>
     </div>
 </div>
 @stop
@@ -93,7 +95,7 @@
     </div>
     <div class="modal-footer">
         <a href="#" class="btn" data-dismiss="modal">Anuluj</a>
-        <a href="#" onclick="$('#product-option-add-form').submit()" class="btn btn-primary">Zspisz</a>
+        <a href="#" onclick="$('#product-option-add-form').submit()" class="btn btn-primary">Zapisz</a>
     </div>
 </div>
 @stop

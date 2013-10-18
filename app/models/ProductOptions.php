@@ -3,7 +3,7 @@
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class Product extends Eloquent
+class ProductOptions extends Eloquent
 {
 
     /**
@@ -11,11 +11,7 @@ class Product extends Eloquent
      *
      * @var string
      */
-    protected $table = 'product';
+    protected $table = 'product_options';
 
-    public function options()
-    {
-        return $this->belongsToMany('ProductsOptions', 'product_options');
-    }
 
 }

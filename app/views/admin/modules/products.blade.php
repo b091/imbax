@@ -31,10 +31,14 @@
                 @foreach($products as $item)
                 <tr>
                     <td>{{$item->name}}</td>
-                    <td class="center">{{$item->createdat}}</td>
-                    <td class="center">{{$item->specjal}}</td>
+                    <td class="center">{{$item->created_at}}</td>
+                    <td class="center"><span class="icon32 @if($item->specjal == "1") icon-check @else icon-cancel  @endif" ></span> </td>
                     <td class="center">
-                        <span class="label label-warning">Hardox 500</span>
+                        @foreach ($item->options as $option)
+                            <span class="label" style="background-color: {{$option->color}};">
+                                {{$option->title}}
+                            </span>&nbsp;
+                        @endforeach
                     </td>
                     <td class="center">
                         <a class="btn btn-info" href="#">
@@ -82,7 +86,7 @@
                         <span class="label label-warning">{{$item->color}}</span>
                     </td>
                     <td class="center">
-                        <a class="btn btn-info" href="#">
+                        <a class="btn btn-info btn-product-option-edit" href="#" data-item='"{{$item}}"'>
                             <i class="icon-edit icon-white"></i>
                             Edytuj
                         </a>

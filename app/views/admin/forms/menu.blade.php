@@ -54,7 +54,7 @@
 
             <div class="box-icon">
                 <a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-down"></i></a>
-                <a href="#" class="btn btn-round"><i class="icon-remove"></i></a>
+                <a href="#" class="btn btn-round confirm-delete"><i class="icon-remove"></i></a>
             </div>
         </div>
         <div class="box-content" style="display:none;">

@@ -8,7 +8,7 @@
 <div class="row-fluid sortable">
     <div class="box span12">
         <div class="box-header well" data-original-title>
-            <h2><i class="icon-list-alt"></i> Products</h2>
+            <h2><i class="icon-list-alt"></i> Produkty</h2>
 
             <div class="box-icon">
                 <a href="#" class="btn btn-product-add btn-round"><i class="icon-plus"></i></a>
@@ -22,7 +22,7 @@
                     <th>Nazwa</th>
                     <th>Data dodania</th>
                     <th>Specjalna</th>
-                    <th>Status</th>
+                    <th>Opcje</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -34,18 +34,14 @@
                     <td class="center">{{$item->createdat}}</td>
                     <td class="center">{{$item->specjal}}</td>
                     <td class="center">
-                        <span class="label label-success">Active</span>
+                        <span class="label label-warning">Hardox 500</span>
                     </td>
                     <td class="center">
-                        <a class="btn btn-success" href="#">
-                            <i class="icon-zoom-in icon-white"></i>
-                            View
-                        </a>
                         <a class="btn btn-info" href="#">
                             <i class="icon-edit icon-white"></i>
                             Edit
                         </a>
-                        <a class="btn btn-danger" href="#">
+                        <a class="btn btn-danger confirm-delete" href="#">
                             <i class="icon-trash icon-white"></i>
                             Delete
                         </a>

@@ -148,10 +148,29 @@
 <script src="/assets/charisma/js/charisma.js"></script>
 <!-- Place inside the <head> of your HTML -->
 
+
+<div id="myModal" class="modal hide">
+    <div class="modal-header">
+        <a href="#" data-dismiss="modal" aria-hidden="true" class="close">×</a>
+         <h3>Delete</h3>
+    </div>
+    <div class="modal-body">
+        <p>You are about to delete.</p>
+        <p>Do you want to proceed?</p>
+    </div>
+    <div class="modal-footer">
+      <a href="#" id="btnYes" class="btn danger">Yes</a>
+      <a href="#" data-dismiss="modal" aria-hidden="true" class="btn secondary">No</a>
+    </div>
+</div>
+
+
+
 <script type="text/javascript" src="/packages/tinymce/tinymce.min.js"></script>
 <script type="text/javascript">
     tinymce.init({
         selector: "textarea",
+        statusbar : false,
         plugins: [
             "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
             "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
@@ -172,6 +191,48 @@
             return false;
         }
     });
+
+
+$(document).ready(function(){
+
+    $('.btn-menu-add').click(function(e){
+            e.preventDefault();
+            $('#menu-add').modal('show');
+    });
+
+    $('.btn-product-add').click(function(e){
+            e.preventDefault();
+            $('#product-add').modal('show');
+    });
+
+    $('.btn-gallery-add').click(function(e){
+            e.preventDefault();
+            $('#gallery-add').modal('show');
+    });
+
+
+    $('#myModal').on('show', function() {
+        var id = $(this).data('id'),
+            removeBtn = $(this).find('.danger');
+    })
+
+    $('.confirm-delete').on('click', function(e) {
+        e.preventDefault();
+
+        var id = $(this).data('id');
+        $('#myModal').data('id', id).modal('show');
+    });
+
+    $('#btnYes').click(function() {
+      	var id = $('#myModal').data('id');
+
+      	$('[data-id='+id+']').remove();
+      	$('#myModal').modal('hide');
+    });
+
+});
+
+
 </script>
 
 </body>

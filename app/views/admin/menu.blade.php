@@ -7,6 +7,10 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
+
+            <div class="btn-group pull-left">
+                <a href="/admin/{{App::getLocale()}}/dashboard.html"><i class="famfamfam-flag-{{App::getLocale()}}"></i>
+            </div>
             <?php
             if (Auth::check())
             {
@@ -17,7 +21,7 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Konfiguracja</a></li>
                         <li class="divider"></li>
                         @foreach($langs as $item)
                             <li><a href="/admin/{{$item->code}}/dashboard.html"><i class="famfamfam-flag-{{$item->code}}"></i> {{$item->name}}</a></li>

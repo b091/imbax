@@ -2,10 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Free HTML5 Bootstrap Admin Template</title>
+    <title>Admin Panel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
-    <meta name="author" content="Muhammad Usman">
 
     <!-- The styles -->
     <link id="bs-css" href="/assets/charisma/css/bootstrap-cerulean.css" rel="stylesheet">
@@ -54,7 +52,7 @@
 <div class="container-fluid">
     <div class="row-fluid">
         @if (Auth::check())
-            @yield('leftmenu')
+        @yield('leftmenu')
         @endif
         <noscript>
             <div class="alert alert-block span10">
@@ -148,5 +146,33 @@
 <script src="/assets/charisma/js/jquery.history.js"></script>
 <!-- application script for Charisma demo -->
 <script src="/assets/charisma/js/charisma.js"></script>
+<!-- Place inside the <head> of your HTML -->
+
+<script type="text/javascript" src="/packages/tinymce/tinymce.min.js"></script>
+<script type="text/javascript">
+    tinymce.init({
+        selector: "textarea",
+        plugins: [
+            "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
+            "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
+            "save table contextmenu directionality emoticons template paste textcolor"
+        ],
+        file_browser_callback: function (field_name, url, type, win) {
+            tinymce.activeEditor.windowManager.open({
+                file: '/admin/pl/elfinder/tinymce',// use an absolute path!
+                title: 'elFinder 2.0',
+                width: 900,
+                height: 450,
+                resizable: 'yes'
+            }, {
+                setUrl: function (url) {
+                    win.document.getElementById(field_name).value = url;
+                }
+            });
+            return false;
+        }
+    });
+</script>
+
 </body>
 </html>

@@ -46,6 +46,7 @@
 @stop
 
 @section('menu')
+@if(isset($menuelement))
 <div class="row-fluid sortable">
     <div class="box span12">
         <div class="box-header well" data-original-title>
@@ -76,7 +77,8 @@
                     <label class="control-label" for="textarea2">Treść</label>
 
                     <div class="controls">
-                        <textarea class="cleditor" id="textarea2" rows="3">{{$menuelement->content}}</textarea>
+<!--                        cleditor-->
+                        <textarea class="" id="textarea2" rows="3">{{$menuelement->content}}</textarea>
                     </div>
                 </div>
                 <div class="">
@@ -87,6 +89,6 @@
 
         </div>
     </div>
-
 </div>
+@endif
 @stop

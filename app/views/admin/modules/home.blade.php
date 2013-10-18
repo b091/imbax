@@ -43,7 +43,7 @@
                     <label class="control-label" for="textarea2">Treść</label>
 
                     <div class="controls">
-                        <textarea class="cleditor" id="textarea2" rows="3">{{$menuelement->content}}</textarea>
+                        <textarea class="" id="textarea2" rows="3">{{$menuelement->content}}</textarea>
                     </div>
                 </div>
                 <div class="">

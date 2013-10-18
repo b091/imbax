@@ -13,45 +13,39 @@ class AdminController extends Controller
 
         App::setLocale($lang);
 
-        if (!Auth::check())
-        {
+        if (!Auth::check()) {
             $pagelink = 'login';
         }
 
-        if($pagelink == 'index')
-        {
+        if ($pagelink == 'index') {
             $pagelink = 'dashboard';
         }
 
-        if ($pagelink)
-        {
+        if ($pagelink) {
             $pagelink = str_replace('.html', '', $pagelink);
 
-            try
-            {
+            try {
                 return $this->$pagelink($param)
                     ->with('lang', $lang)
                     ->with('langs', Langs::all())
                     ->with('menu', Menu::whereRaw('lang = ?', array($lang))->get());
-            }
-            catch (Exception $e)
-            {
+            } catch (Exception $e) {
                 return View::make('admin.404');
             }
         }
     }
 
-    public function login($lang ='pl')
+    public function login($lang = 'pl')
     {
-        if (Auth::attempt(array('email' => Input::get('email'), 'password' => Input::get('password'))) || Auth::check())
-        {
+        if (Auth::attempt(array('email' => Input::get('email'), 'password' => Input::get('password'))) || Auth::check()) {
             return Redirect::to("/admin/{$lang}/dashboard.html");
         }
 
         return View::make('admin.login');
     }
 
-    public function dashboard(){
+    public function dashboard()
+    {
         return View::make('admin.dashboard');
     }
 
@@ -65,16 +59,37 @@ class AdminController extends Controller
     public function menu($id)
     {
         $menuelement = Menu::find($id);
-        $view = View::make("admin.modules.{$menuelement->layout}")->with('menuelement',  $menuelement);
+        $view = View::make("admin.modules.{$menuelement->layout}")->with('menuelement', $menuelement);
 
-        switch($menuelement->layout){
+        switch ($menuelement->layout) {
             case 'products' :
-                      $view->with('products', Product::all());
+                $view->with('products', Product::all());
+                break;
+            CASE 'gallery' :
+                $view->with('gallery', Gallery::all());
                 break;
         }
 
         return $view;
     }
 
+    public function galleryadd()
+    {
+        $file = Input::file('photo');
+        $title = Input::get('title');
+        $filename = uniqid() . '.' . $file->getClientOriginalExtension();
+
+        $image = new Gallery();
+
+        $image->name = $title;
+        $image->photo = $filename;
+
+        $file->move('files' . DIRECTORY_SEPARATOR . 'gallery', $filename);
+
+        $image->save();
+
+        return Redirect::to($_SERVER['HTTP_REFERER']);
+
+    }
 
 }

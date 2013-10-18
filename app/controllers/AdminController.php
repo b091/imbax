@@ -89,7 +89,8 @@ class AdminController extends Controller
         switch ($menuelement->layout)
         {
             case 'products' :
-                $view->with('products', Product::whereRaw('menu_id = ?', array($id))->get());
+                $view->with('products', Product::whereRaw('menu_id = ?', array($id))->get())
+                     ->with('productsoptions', ProductsOptions::all());
                 break;
             case 'gallery' :
                 $view->with('gallery', Gallery::whereRaw('menu_id = ?', array($id))->get());

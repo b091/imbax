@@ -39,6 +39,8 @@
     <![endif]-->
 
     <link href="/assets/famfamfam_flags/famfamfam-flags.css" rel="stylesheet">
+    <link href="/packages/colorpicker/css/colorpicker.css" rel="stylesheet">
+
 
     <!-- The fav icon -->
     <link rel="shortcut icon" href="/assets/charisma/img/favicon.ico">
@@ -165,7 +167,7 @@
 </div>
 
 
-
+<script type="text/javascript" src="/packages/colorpicker/js/bootstrap-colorpicker.js"></script>
 <script type="text/javascript" src="/packages/tinymce/tinymce.min.js"></script>
 <script type="text/javascript">
     tinymce.init({
@@ -210,6 +212,17 @@ $(document).ready(function(){
         $('#gallery-add').modal('show');
     });
 
+    $('.btn-product-settings').click(function(e){
+        e.preventDefault();
+        $('#product-settings').modal('show');
+    });
+
+    $('.btn-product-option-add').click(function(e){
+        e.preventDefault();
+        $('#product-option-add').modal('show');
+    });
+
+
     $('.confirm-delete').on('click', function(e) {
         e.preventDefault();
         $('#confirmModal').data('id', $(this).data('id')).data('link', $(this).data('link')).modal('show');
@@ -227,6 +240,10 @@ $(document).ready(function(){
             window.location.href = data;
         });;
     });
+
+
+
+    $('#colorpicker').colorpicker();
 
 });
 

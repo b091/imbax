@@ -149,7 +149,7 @@
 <!-- Place inside the <head> of your HTML -->
 
 
-<div id="myModal" class="modal hide">
+<div id="confirmModal" class="modal hide">
     <div class="modal-header">
         <a href="#" data-dismiss="modal" aria-hidden="true" class="close">×</a>
          <h3>Delete</h3>
@@ -196,38 +196,34 @@
 $(document).ready(function(){
 
     $('.btn-menu-add').click(function(e){
-            e.preventDefault();
-            $('#menu-add').modal('show');
+        e.preventDefault();
+        $('#menu-add').modal('show');
     });
 
     $('.btn-product-add').click(function(e){
-            e.preventDefault();
-            $('#product-add').modal('show');
+        e.preventDefault();
+        $('#product-add').modal('show');
     });
 
     $('.btn-gallery-add').click(function(e){
-            e.preventDefault();
-            $('#gallery-add').modal('show');
+        e.preventDefault();
+        $('#gallery-add').modal('show');
     });
-
-
-    $('#myModal').on('show', function() {
-        var id = $(this).data('id'),
-            removeBtn = $(this).find('.danger');
-    })
 
     $('.confirm-delete').on('click', function(e) {
         e.preventDefault();
-
-        var id = $(this).data('id');
-        $('#myModal').data('id', id).modal('show');
+        $('#confirmModal').data('id', $(this).data('id')).data('link', $(this).data('link')).modal('show');
     });
 
     $('#btnYes').click(function() {
-      	var id = $('#myModal').data('id');
+      	var confirmWindow = $('#confirmModal');
 
-      	$('[data-id='+id+']').remove();
-      	$('#myModal').modal('hide');
+      //	$('[data-id='+id+']').remove();
+        confirmWindow.modal('hide');
+
+        $.post(confirmWindow.data('link'), {
+            id: confirmWindow.data('id')
+        });
     });
 
 });

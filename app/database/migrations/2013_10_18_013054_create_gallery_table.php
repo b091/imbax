@@ -15,9 +15,11 @@ class CreateGalleryTable extends Migration {
         Schema::create('gallery', function(Blueprint $table)
         {
             $table->increments('id');
+            $table->integer('menu_id')->unsigned()->index();
             $table->string('name');
             $table->string('photo');
             $table->timestamps();
+            $table->foreign('menu_id')->references('id')->on('menu');
         });
 	}
 

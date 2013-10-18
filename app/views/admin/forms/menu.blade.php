@@ -6,27 +6,27 @@
     </div>
     <div class="modal-body">
         <div class="box-content">
-            <form class="form-horizontal">
+            <form class="form-horizontal" id="menu-add-form" action="/admin/{{$lang}}/menu/add.html" METHOD="post">
 
                 <div class="control-group">
                     <label class="control-label" for="typeahead">Tytuł</label>
 
                     <div class="controls">
-                        <input type="text" class="">
+                        <input type="text" name="title">
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="link">Link</label>
 
                     <div class="controls">
-                        <input type="text" class="input-xlarge" id="link" value="">
+                        <input type="text" class="input-xlarge" id="link" value="" name="pagelink">
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="date01">Typ</label>
 
                     <div class="controls">
-                        <select>
+                        <select name="module">
                             <option>home</option>
                             <option>contact</option>
                             <option>products</option>
@@ -39,8 +39,8 @@
         </div>
     </div>
     <div class="modal-footer">
-        <a href="/#" class="btn" data-dismiss="modal">Anuluj</a>
-        <a href="/#" class="btn btn-primary">Zapisz</a>
+        <a href="#" class="btn" data-dismiss="modal">Anuluj</a>
+        <a href="#" onclick="$('#menu-add-form').submit();" class="btn btn-primary">Zapisz</a>
     </div>
 </div>
 @stop
@@ -54,7 +54,7 @@
 
             <div class="box-icon">
                 <a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-down"></i></a>
-                <a href="#" class="btn btn-round confirm-delete"><i class="icon-remove"></i></a>
+                <a href="#" class="btn btn-round confirm-delete" data-id="{{$menuelement->id}}" data-link="/admin/{{$lang}}/menu/remove.html"><i class="icon-remove"></i></a>
             </div>
         </div>
         <div class="box-content" style="display:none;">

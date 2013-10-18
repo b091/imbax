@@ -8,7 +8,7 @@
             <h2><i class="icon-edit"></i> {{$menuelement->title}} ({{$menuelement->pagelink}})</h2>
 
             <div class="box-icon">
-                <a href="#" class="btn btn-round confirm-delete"><i class="icon-remove"></i></a>
+                <a href="#" class="btn btn-round confirm-delete" data-id="{{$menuelement->id}}" data-link="/admin/{{$lang}}/menu/remove.html"><i class="icon-remove"></i></a>
             </div>
         </div>
         <div class="box-content">

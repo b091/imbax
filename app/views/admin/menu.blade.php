@@ -7,17 +7,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-
-            <div class="btn-group pull-left">
-                <a href="/admin/{{App::getLocale()}}/dashboard.html"><i class="famfamfam-flag-{{App::getLocale()}}"></i>
-            </div>
             <?php
             if (Auth::check())
             {
                 ?>
                 <div class="btn-group pull-right">
                     <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="icon-user"></i> <span class="hidden-phone"><?=Auth::user()->email?></span>
+                        <i class="icon-user"></i> <i class="famfamfam-flag-{{App::getLocale()}}"></i> <span class="hidden-phone"><?=Auth::user()->email?></span>
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">

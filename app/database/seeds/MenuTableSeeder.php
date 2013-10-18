@@ -9,8 +9,6 @@ class MenuTableSeeder extends Seeder
             array(
                 'title' => 'Oferta',
                 'pagelink' => 'oferta.html',
-                'module' => 'BaseControler',
-                'method' => 'Index',
                 'lang' => 'pl',
                 'layout' => 'home',
                 'mainpage' => 1,
@@ -38,8 +36,6 @@ class MenuTableSeeder extends Seeder
             array(
                 'title' => 'Produkty',
                 'pagelink' => 'produkty.html',
-                'module' => 'BaseControler',
-                'method' => 'Index',
                 'lang' => 'pl',
                 'layout' => 'products',
                 'mainpage' => 0,
@@ -48,8 +44,6 @@ class MenuTableSeeder extends Seeder
             array(
                 'title' => 'Galeria',
                 'pagelink' => 'galeria.html',
-                'module' => 'BaseControler',
-                'method' => 'Index',
                 'lang' => 'pl',
                 'layout' => 'gallery',
                 'mainpage' => 0,
@@ -58,8 +52,6 @@ class MenuTableSeeder extends Seeder
             array(
                 'title' => 'Kontakt',
                 'pagelink' => 'kontakt.html',
-                'module' => 'BaseControler',
-                'method' => 'Index',
                 'lang' => 'pl',
                 'layout' => 'contact',
                 'mainpage' => 0,
@@ -85,8 +77,6 @@ class MenuTableSeeder extends Seeder
             array(
                 'title' => 'Offer',
                 'pagelink' => 'offer.html',
-                'module' => 'BaseControler',
-                'method' => 'Index',
                 'lang' => 'gb',
                 'mainpage' => 1,
                 'layout' => 'home',
@@ -114,8 +104,6 @@ class MenuTableSeeder extends Seeder
             array(
                 'title' => 'Våra produkter',
                 'pagelink' => 'vara-produkter.html',
-                'module' => 'BaseControler',
-                'method' => 'Index',
                 'lang' => 'se',
                 'mainpage' => 1,
                 'layout' => 'home',

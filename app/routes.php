@@ -5,6 +5,17 @@ Route::get('/{lang}/{page?}', 'HomeController@index')
 
 Route::get('/', 'HomeController@index');
 
+// ADMIN PANEL
+Route::post('/admin/{lang}/gallery/add.html', 'GalleryController@add')
+    ->where(array('lang' => '[a-z]{2}'));
+Route::post('/admin/{lang}/menu/add.html', 'MenuController@add')
+    ->where(array('lang' => '[a-z]{2}'));
+
+Route::post('/admin/{lang}/gallery/remove.html', 'GalleryController@remove')
+    ->where(array('lang' => '[a-z]{2}'));
+Route::post('/admin/{lang}/menu/remove.html', 'MenuController@remove')
+    ->where(array('lang' => '[a-z]{2}'));
+
 Route::get('/admin/{lang}/{page?}', 'AdminController@index')
     ->where(array('lang' => '[a-z]{2}', 'page' => '(.*\.html)'));
 

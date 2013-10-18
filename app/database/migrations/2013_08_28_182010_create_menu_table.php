@@ -20,8 +20,6 @@ class CreateMenuTable extends Migration {
             $table->string('title', 100);
             $table->text('content') ;
             $table->string('pagelink');
-            $table->string('module');
-            $table->string('method');
             $table->string('lang');
             $table->boolean('mainpage')->default(false);
 			$table->timestamps();

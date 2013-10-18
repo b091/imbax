@@ -15,11 +15,15 @@ class CreateProductTable extends Migration {
 		Schema::create('product', function(Blueprint $table)
 		{
 			$table->increments('id');
+            $table->integer('menu_id')->unsigned()->index();
             $table->string('name');
             $table->longText('description');
             $table->string('short_description')->default('');
-            $table->string('photo')->default('test.jpg');
+            $table->boolean('specjal')->default(false);
+            $table->string('foto')->default('');
 			$table->timestamps();
+
+            $table->foreign('menu_id')->references('id')->on('menu');
 		});
 	}
 

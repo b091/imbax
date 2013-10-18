@@ -41,7 +41,7 @@
                             <i class="icon-edit icon-white"></i>
                             Edit
                         </a>
-                        <a class="btn btn-danger confirm-delete" href="#">
+                        <a class="btn btn-danger confirm-delete" href="#" data-id="{{$item->id}}" data-link="/admin/{{$lang}}/product/remove.html">
                             <i class="icon-trash icon-white"></i>
                             Delete
                         </a>

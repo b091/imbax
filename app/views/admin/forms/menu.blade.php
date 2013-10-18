@@ -6,7 +6,7 @@
     </div>
     <div class="modal-body">
         <div class="box-content">
-            <form class="form-horizontal" id="menu-add-form" action="/admin/{{$lang}}/menu/add.html" METHOD="post">
+            <form class="form-horizontal" id="menu-add-form" action="/admin/{{$lang}}/menu/add.html" method="post">
 
                 <div class="control-group">
                     <label class="control-label" for="typeahead">Tytuł</label>
@@ -58,27 +58,27 @@
             </div>
         </div>
         <div class="box-content" style="display:none;">
-            <form class="form-horizontal">
+            <form class="form-horizontal" action="/admin/{{$lang}}/menu/update.html" method="post">
+                <input type="hidden" name="id" value="{{$menuelement->id}}"/>
                 <div class="control-group">
                     <label class="control-label" for="title">Tytuł</label>
 
                     <div class="controls">
-                        <input type="text" class="span6" id="title" value="{{$menuelement->title}}">
+                        <input type="text" class="span6" id="title" value="{{$menuelement->title}}" name="title">
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="link">Link</label>
 
                     <div class="controls">
-                        <input type="text" class="input-xlarge" id="link" value="{{$menuelement->pagelink}}">
+                        <input type="text" class="input-xlarge" id="link" value="{{$menuelement->pagelink}}" name="pagelink">
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="textarea2">Treść</label>
 
                     <div class="controls">
-<!--                        cleditor-->
-                        <textarea class="" id="textarea2" rows="3">{{$menuelement->content}}</textarea>
+                        <textarea id="textarea2" rows="3" name="content">{{$menuelement->content}}</textarea>
                     </div>
                 </div>
                 <div class="">

@@ -16,6 +16,11 @@ Route::post('/admin/{lang}/gallery/remove.html', 'GalleryController@remove')
 Route::post('/admin/{lang}/menu/remove.html', 'MenuController@remove')
     ->where(array('lang' => '[a-z]{2}'));
 
+Route::post('/admin/{lang}/gallery/update.html', 'GalleryController@update')
+    ->where(array('lang' => '[a-z]{2}'));
+Route::post('/admin/{lang}/menu/update.html', 'MenuController@update')
+    ->where(array('lang' => '[a-z]{2}'));
+
 Route::get('/admin/{lang}/{page?}', 'AdminController@index')
     ->where(array('lang' => '[a-z]{2}', 'page' => '(.*\.html)'));
 

@@ -12,38 +12,29 @@
             </div>
         </div>
         <div class="box-content">
-            <form class="form-horizontal">
+            <form class="form-horizontal" method="post" action="/admin/{{$lang}}/menu/update.html">
+
+                <input type="hidden" name="id" value="{{$menuelement->id}}"/>
+
                 <div class="control-group">
                     <label class="control-label" for="title">Tytuł</label>
 
                     <div class="controls">
-                        <input type="text" class="span6" id="title" value="{{$menuelement->title}}">
+                        <input type="text" class="span6" id="title" value="{{$menuelement->title}}" name="title">
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="link">Link</label>
 
                     <div class="controls">
-                        <input type="text" class="input-xlarge" id="link" value="{{$menuelement->pagelink}}">
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="link">Typ</label>
-
-                    <div class="controls">
-                        <select>
-                            <option>home</option>
-                            <option>contact</option>
-                            <option>products</option>
-                            <option>gallery</option>
-                        </select>
+                        <input type="text" class="input-xlarge" id="link" value="{{$menuelement->pagelink}}" name="pagelink">
                     </div>
                 </div>
                 <div class="control-group">
                     <label class="control-label" for="textarea2">Treść</label>
 
                     <div class="controls">
-                        <textarea class="" id="textarea2" rows="3">{{$menuelement->content}}</textarea>
+                        <textarea id="textarea2" rows="3" name="content">{{$menuelement->content}}</textarea>
                     </div>
                 </div>
                 <div class="">

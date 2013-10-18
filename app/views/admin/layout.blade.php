@@ -223,7 +223,9 @@ $(document).ready(function(){
 
         $.post(confirmWindow.data('link'), {
             id: confirmWindow.data('id')
-        });
+        }).done(function( data ) {
+            window.location.href = data;
+        });;
     });
 
 });

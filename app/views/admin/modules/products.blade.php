@@ -40,7 +40,7 @@
                             </span>&nbsp;
                         @endforeach
                     </td>
-                    <td class="center">
+                    <td class="center" width="92px">
                         <a class="btn btn-info" href="#">
                             <i class="icon-edit icon-white"></i>
                             Edytuj
@@ -86,7 +86,7 @@
                         <span class="label label-warning">{{$item->color}}</span>
                     </td>
                     <td class="center">
-                        <a class="btn btn-info btn-product-option-edit" href="#" data-item='"{{$item}}"'>
+                        <a class="btn btn-info btn-product-option-edit" href="#" data-id='"{{$item->id}}"'>
                             <i class="icon-edit icon-white"></i>
                             Edytuj
                         </a>

@@ -199,43 +199,60 @@ $(document).ready(function(){
 
     $('.btn-menu-add').click(function(e){
         e.preventDefault();
+        $('#menu-add-form')[0].reset();
         $('#menu-add').modal('show');
     });
 
     $('.btn-product-add').click(function(e){
         e.preventDefault();
+        $('#product-add-form')[0].reset();
         $('#product-add').modal('show');
     });
 
     $('.btn-gallery-add').click(function(e){
         e.preventDefault();
+        $('#gallery-add-form')[0].reset();
         $('#gallery-add').modal('show');
     });
 
     $('.btn-product-settings').click(function(e){
         e.preventDefault();
+
+        $('#product-settings-form')[0].reset();
         $('#product-settings').modal('show');
     });
 
     $('.btn-product-option-add').click(function(e){
         e.preventDefault();
+
+        $('#product-option-add-form')[0].reset();
+        $('#product-option-add-form').attr("action","/admin/{{$lang}}/productsoptions/add.html");
         $('#product-option-add').modal('show');
+
     });
 
 
     $('.btn-product-option-edit').click(function(e){
         e.preventDefault();
+        $('#product-option-add-form')[0].reset();
+        $('#product-option-add-form').attr("action","/admin/{{$lang}}/productsoptions/update.html");
         $('#product-option-add').modal('show');
-        //var ttt = $p  roductsoptions}};
-//        var aaa = $(this).data('item');
-//        console.log('>>>>>',aaa,'<<<')
-//    console.log($.parseJSON(aaa));
-//        $('#product-option-add-form').loadJSON({
-//            title:'dupa'
-//        });
-//        for (var i in data) {
-//                $('input[name="'+i+'"]').val(data[i]);
-//            }
+
+        $.ajax({
+            url: "/admin/pl/productsoptions/get.html",
+            type: 'post',
+            data: {
+                id: $(this).data('id').replace('"', '').replace('"', '')
+            }
+        }).done(function(resp) {
+            for (var i in resp) {
+                $('#product-option-add-form input[name="'+i+'"]').val(resp[i]);
+                if(i == 'color'){
+                    $('#colorpicker').colorpicker('setValue', resp[i]);
+                }
+            }
+        });
+
     });
 
 

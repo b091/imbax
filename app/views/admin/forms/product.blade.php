@@ -72,6 +72,7 @@
         <div class="box-content">
             <form class="form-horizontal" method="post" action="/admin/{{$lang}}/productsoptions/add.html" id="product-option-add-form">
 
+                <input type="hidden" name="id"/>
                 <div class="control-group">
                     <label class="control-label" for="typeahead">Nazwa</label>
 

@@ -7,6 +7,9 @@ Route::get('/{lang}/{page?}', 'HomeController@index')
 Route::get('/', 'HomeController@index');
 
 // ADMIN PANEL
+
+Route::post('/admin/{lang}/productsoptions/get.html', 'ProductsOptionsController@get')->where($langpartofurl);
+
 Route::post('/admin/{lang}/gallery/add.html', 'GalleryController@add')->where($langpartofurl);
 Route::post('/admin/{lang}/menu/add.html', 'MenuController@add')->where($langpartofurl);
 Route::post('/admin/{lang}/productsoptions/add.html', 'ProductsOptionsController@add')->where($langpartofurl);

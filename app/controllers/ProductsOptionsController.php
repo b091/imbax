@@ -15,6 +15,11 @@ class ProductsOptionsController extends Controller
          return Redirect::to($_SERVER['HTTP_REFERER']);
     }
 
+    public function get()
+    {
+        return ProductsOptions::find(Input::get('id'));
+    }
+
     public function update()
     {
 

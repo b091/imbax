@@ -181,10 +181,10 @@
         file_browser_callback: function (field_name, url, type, win) {
             tinymce.activeEditor.windowManager.open({
                 file: '/admin/pl/elfinder/tinymce',// use an absolute path!
-                title: 'elFinder 2.0',
+                title: 'Menadzer plików',
                 width: 900,
                 height: 450,
-                resizable: 'yes'
+                resizable: 'no'
             }, {
                 setUrl: function (url) {
                     win.document.getElementById(field_name).value = url;

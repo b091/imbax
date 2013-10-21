@@ -1,22 +1,15 @@
+
 <div class="carousel-rss hidden-xs">
     <div class="container">
         <div id="carousel-example-generic" class="carousel slide">
+
             <div class="carousel-inner">
-                <div class="item active">
-                    <img src="/{{$templateDir}}/images/slide_A.jpg" alt="1 slide">
+
+                @foreach(glob('files' . DIRECTORY_SEPARATOR . 'carousel' . DIRECTORY_SEPARATOR . "*.jpg") as $key => $img)
+                <div class="item @if ($key == 0) active @endif">
+                    <img src="{{$img}}" alt="1 slide">
                 </div>
-                <div class="item">
-                    <img src="/{{$templateDir}}/images/slide_B.jpg" alt="2 slide">
-                </div>
-                <div class="item">
-                    <img src="/{{$templateDir}}/images/slide_C.jpg" alt="3 slide">
-                </div>
-                <div class="item">
-                    <img src="/{{$templateDir}}/images/slide_D.jpg" alt="4 slide">
-                </div>
-                <div class="item">
-                    <img src="/{{$templateDir}}/images/slide_E.jpg" alt="5 slide">
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

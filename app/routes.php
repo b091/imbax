@@ -49,3 +49,10 @@ Route::get(
     }
 );
 
+Route::get(
+    '/admin/logout.html',
+    function () {
+        return Redirect::to('/admin/pl/logout.html');
+    }
+);
+

@@ -10,5 +10,7 @@ return array(
     'customer-service' => 'Customer service',
     'choose-language' => 'Chose language',
     'buckets' => 'Buckets for excavators',
+    'next' => 'Next',
+    'previous' => 'Previous',
 
 );

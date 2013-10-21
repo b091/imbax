@@ -10,5 +10,6 @@ return array(
     'customer-service' => 'Obsługa klienta',
     'choose-language' => 'Język strony',
     'buckets' => 'Łyżki do koparek',
-
+    'next' => 'Następne',
+    'previous' => 'Poprzednie',
 );

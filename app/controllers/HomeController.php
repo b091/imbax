@@ -19,15 +19,15 @@ class HomeController extends BaseController
 
         $menu = Menu::whereRaw('lang = ?', array($lang))->get();
 
-
         return View::make("templates.rss.layouts.{$currentpage->layout}")
             ->with('menu', $menu)
             ->with('content', 'TRESC')
             ->with('currentpage', $currentpage)
             ->with('content', $currentpage->content)
             ->with('templateDir', 'templates/rss')
-            ->with('product', Product::all())
+            ->with('product', Product::where('menu_id', '=', $currentpage->id)->get())
             ->with('langs', Langs::all())
+            ->with('gallery', Gallery::where('menu_id', '=', $currentpage->id)->get())
             ->with('currentlang', $lang);
     }
 }

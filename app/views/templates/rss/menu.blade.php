@@ -40,5 +40,3 @@
     </ul>
 </div>
 @stop
-
-<!--class="@if ($key == 0) active @endif"-->

@@ -9,6 +9,7 @@ return array(
     'contactus' => 'Kontakta oss',
     'customer-service' => 'Kundservice',
     'choose-language' => 'Välj språk',
-    'buckets' => 'Skopor för grävmaskiner'
-
+    'buckets' => 'Skopor för grävmaskiner',
+    'next' => 'Nästa',
+    'previous' => 'Föregående',
 );

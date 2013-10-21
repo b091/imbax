@@ -275,7 +275,7 @@ $(document).ready(function(){
         $('#product-option-add').modal('show');
 
         $.ajax({
-            url: "/admin/pl/productsoptions/get.html",
+            url: "/admin/{{$lang}}/productsoptions/get.html",
             type: 'post',
             data: {
                 id: $(this).data('id').replace('"', '').replace('"', '')
@@ -313,6 +313,32 @@ $(document).ready(function(){
 
 
     $('#colorpicker').colorpicker();
+
+
+
+
+    $('.thumbnails').on('click','.gallery-delete',function(e){
+   		e.preventDefault();
+   		var that = this;
+        $.ajax({
+            url: "/admin/{{$lang}}/gallery/remove.html",
+            type: 'post',
+            data: {
+                id: $(this).parents('.thumbnail').attr('id').replace('image-', '')
+            }
+        }).done(function(resp) {
+            $(that).parents('.thumbnail').fadeOut();
+        });
+
+   	});
+   	//gallery edit
+   	$('.thumbnails').on('click','.gallery-edit',function(e){
+   		e.preventDefault();
+   		//get image id
+        console.log($(this), $(this).data('id'), $(this).parents('.thumbnail').attr('id').replace('image-', ''));
+   		//alert($(this).parents('.thumbnail').attr('id'));
+   	});
+
 
 });
 

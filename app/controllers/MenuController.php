@@ -38,7 +38,14 @@ class MenuController extends Controller
 
     public function remove()
     {
-        Menu::destroy(Input::get('id'));
+        $id = Input::get('id');
+//        $asd = Product::where('menu_id', '=', $id);
+//        foreach ($asd as $product){
+//            $product->options()->detach();
+//            $product->delete();
+//        }
+
+        Menu::destroy($id);
         return '/admin';
     }
 

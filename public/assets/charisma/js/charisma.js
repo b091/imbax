@@ -189,18 +189,18 @@ function docReady(){
 
 	//gallery image controls example
 	//gallery delete
-	$('.thumbnails').on('click','.gallery-delete',function(e){
-		e.preventDefault();
-		//get image id
-		//alert($(this).parents('.thumbnail').attr('id'));
-		$(this).parents('.thumbnail').fadeOut();
-	});
-	//gallery edit
-	$('.thumbnails').on('click','.gallery-edit',function(e){
-		e.preventDefault();
-		//get image id
-		//alert($(this).parents('.thumbnail').attr('id'));
-	});
+//	$('.thumbnails').on('click','.gallery-delete',function(e){
+//		e.preventDefault();
+//		//get image id
+//		//alert($(this).parents('.thumbnail').attr('id'));
+//		$(this).parents('.thumbnail').fadeOut();
+//	});
+//	//gallery edit
+//	$('.thumbnails').on('click','.gallery-edit',function(e){
+//		e.preventDefault();
+//		//get image id
+//		//alert($(this).parents('.thumbnail').attr('id'));
+//	});
 
 	//gallery colorbox
 	$('.thumbnail a').colorbox({rel:'thumbnail a', transition:"elastic", maxWidth:"95%", maxHeight:"95%"});

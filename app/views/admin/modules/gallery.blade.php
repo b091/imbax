@@ -22,8 +22,8 @@
             <ul class="thumbnails gallery">
 
                 @foreach($gallery as $item)
-                <li id="image-1" class="thumbnail">
-                    <a style="background:url(/files/gallery/{{$item->photo}})" title="Sample Image 1" href="/files/gallery/{{$item->photo}}"><img class="grayscale"
+                <li id="image-{{$item->id}}" class="thumbnail">
+                    <a style="background:url(/files/gallery/{{$item->photo}})" title="Sample Image 1" href="/files/gallery/{{$item->photo}}" data-id="{{$item->id}}"><img class="grayscale"
                                                                                                                              src="/files/gallery/{{$item->photo}}"
                                                                                                                              alt="{{$item->name}}"></a>
                 </li>

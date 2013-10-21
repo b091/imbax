@@ -14,4 +14,10 @@ class Menu extends Eloquent
     protected $table = 'menu';
 
 
+    public function products()
+    {
+        return $this->hasMany('Product');
+    }
+
+
 }

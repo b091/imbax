@@ -23,4 +23,15 @@ class GalleryController extends Controller
 
     }
 
+
+    public function remove()
+       {
+           $id = Input::get('id');
+           $filename = Gallery::find($id)->photo;
+           Gallery::destroy($id);
+           unlink('files' . DIRECTORY_SEPARATOR . 'gallery' . DIRECTORY_SEPARATOR . $filename);
+           //@todo usuwanie pliku
+           return '{success:true}';
+       }
+
 }

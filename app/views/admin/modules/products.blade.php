@@ -41,7 +41,7 @@
                         @endforeach
                     </td>
                     <td class="center" width="92px">
-                        <a class="btn btn-info" href="#">
+                        <a class="btn btn-info btn-product-edit" href="#" data-id="{{$item->id}}">
                             <i class="icon-edit icon-white"></i>
                             Edytuj
                         </a>

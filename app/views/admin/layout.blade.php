@@ -206,7 +206,42 @@ $(document).ready(function(){
     $('.btn-product-add').click(function(e){
         e.preventDefault();
         $('#product-add-form')[0].reset();
+        $('#product-add-form').attr("action","/admin/{{$lang}}/product/add.html");
         $('#product-add').modal('show');
+    });
+
+    $('.btn-product-edit').click(function(e){
+        e.preventDefault();
+
+        $('#product-add-form')[0].reset();
+        $('#product-add-form').attr("action","/admin/{{$lang}}/product/update.html");
+        $('#product-add').modal('show');
+
+        $.ajax({
+            url: "/admin/pl/product/get.html",
+            type: 'post',
+            data: {
+                id: $(this).data('id')
+            }
+        }).done(function(resp) {
+            for (var i in resp) {
+                $('#product-add-form input[name="'+i+'"]').val(resp[i]);
+                if(i == 'description')
+                {
+                    tinyMCE.get('producttinymce').setContent(resp[i]);
+                }
+                else if (i == 'options')
+                {
+                    console.log(resp[i]);
+                    $(resp[i]).each(function(i, item){
+                        var selector = "#product-add-form :checkbox[name='options[]'][value='"+item.id+"']";
+                        $(selector).prop('checked', true);
+                        $(selector).parents('span').toggleClass('checked');
+                    });
+                }
+            }
+        });
+
     });
 
     $('.btn-gallery-add').click(function(e){
@@ -234,6 +269,7 @@ $(document).ready(function(){
 
     $('.btn-product-option-edit').click(function(e){
         e.preventDefault();
+
         $('#product-option-add-form')[0].reset();
         $('#product-option-add-form').attr("action","/admin/{{$lang}}/productsoptions/update.html");
         $('#product-option-add').modal('show');
@@ -252,7 +288,6 @@ $(document).ready(function(){
                 }
             }
         });
-
     });
 
 

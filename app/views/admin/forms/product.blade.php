@@ -9,18 +9,19 @@
             <form class="form-horizontal" method="post" action="/admin/{{$lang}}/product/add.html" id="product-add-form">
 
                 <input type="hidden" name="menu_id" value="{{$menuelement->id}}"/>
+                <input type="hidden" name="id"/>
 
                 <div class="control-group">
                     <label class="control-label" for="typeahead">Nazwa</label>
                     <div class="controls">
-                        <input type="text" name="title">
+                        <input type="text" name="name">
                     </div>
                 </div>
 
                 <div class="control-group">
                     <label class="control-label" for="typeahead">Treść</label>
                     <div class="controls">
-                        <textarea name="content"></textarea>
+                        <textarea name="description" id="producttinymce"></textarea>
                     </div>
                 </div>
 

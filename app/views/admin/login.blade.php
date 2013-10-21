@@ -18,9 +18,9 @@
             </div>
             <div class="clearfix"></div>
 
-            <div class="input-prepend">
-                <label class="remember" for="remember"><input type="checkbox" id="remember"/>Remember me</label>
-            </div>
+<!--            <div class="input-prepend">-->
+<!--                <label class="remember" for="remember"><input type="checkbox" id="remember"/>Remember me</label>-->
+<!--            </div>-->
             <div class="clearfix"></div>
 
             <p class="center span5">

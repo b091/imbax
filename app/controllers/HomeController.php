@@ -11,7 +11,8 @@ class HomeController extends BaseController
         App::setLocale($lang);
 
         if ($pagelink === null) {
-            $pagelink = Menu::whereRaw('mainpage = ? AND lang = ?', array(true, $lang))->firstOrFail()->pagelink;
+            //$pagelink = Menu::whereRaw('mainpage = ? AND lang = ?', array(true, $lang))->firstOrFail()->pagelink;
+            $pagelink = Menu::whereRaw('layout = ? AND lang = ?', array('home', $lang))->firstOrFail()->pagelink;
         }
 
         $currentpage = Menu::whereRaw('pagelink = ? AND lang = ?', array($pagelink, $lang))->firstOrFail();

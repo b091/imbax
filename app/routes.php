@@ -20,6 +20,7 @@ Route::post('/admin/{lang}/gallery/remove.html', 'GalleryController@remove')->wh
 Route::post('/admin/{lang}/menu/remove.html', 'MenuController@remove')->where($langpartofurl);
 Route::post('/admin/{lang}/productsoptions/remove.html', 'ProductsOptionsController@remove')->where($langpartofurl);
 Route::post('/admin/{lang}/product/remove.html', 'ProductController@remove')->where($langpartofurl);
+Route::post('/admin/{lang}/product/removePhoto.html', 'ProductController@removePhoto')->where($langpartofurl);
 
 Route::post('/admin/{lang}/gallery/update.html', 'GalleryController@update')->where($langpartofurl);
 Route::post('/admin/{lang}/menu/update.html', 'MenuController@update')->where($langpartofurl);
@@ -56,3 +57,11 @@ Route::get(
     }
 );
 
+
+Route::get(
+    '/test.html',
+    function () {
+       var_dump(
+           get_magic_quotes_gpc());
+    }
+);

@@ -172,13 +172,13 @@
 <script type="text/javascript">
     tinymce.init({
         selector: "textarea",
-        statusbar : false,
+        statusbar : true,
         plugins: [
             "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
             "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
-            "save table contextmenu directionality emoticons template paste textcolor"
+            "save table contextmenu directionality emoticons template paste textcolor", "autoresize"
         ],
-        resize: "both",
+        resize: true,
         file_browser_callback: function (field_name, url, type, win) {
             tinymce.activeEditor.windowManager.open({
                 file: '/admin/pl/elfinder/tinymce',// use an absolute path!
@@ -208,6 +208,8 @@ $(document).ready(function(){
         e.preventDefault();
         $('#product-add-form input[name="specjal"]').parents('span').removeClass('checked');
         $('#product-add-form input[name="specjal"]').prop('checked', true);
+        $('.thumbnail-upload').find('.thumbnail-upload-img').remove();
+
         $('#product-add-form')[0].reset();
         $('#product-add-form').attr("action","/admin/{{$lang}}/product/add.html");
         $('#product-add').modal('show');
@@ -217,6 +219,8 @@ $(document).ready(function(){
         e.preventDefault();
 
         $('#product-add-form')[0].reset();
+        $('.thumbnail-upload').find('.thumbnail-upload-img').remove();
+
         $('#product-add-form').attr("action","/admin/{{$lang}}/product/update.html");
         $('#product-add').modal('show');
 
@@ -228,6 +232,7 @@ $(document).ready(function(){
             }
         }).done(function(resp) {
             var input;
+                console.log(resp);
             for (var i in resp) {
 
                 input = $('#product-add-form input[name="' + i + '"]');
@@ -256,8 +261,36 @@ $(document).ready(function(){
                         $(input).parents('span').removeClass('checked');
                     }
                 }
-                else if (i == 'photo'){
+                else if (i == 'photo' && resp[i] != ''){
                     //append
+                    $('.thumbnail-upload').find('.thumbnail-upload-img').remove();
+                    $('.thumbnail-upload').append('<div class="thumbnail thumbnail-upload-img" width="100px"><img src="/files/products/' + resp[i] + '" width="100px"/></div>');
+                   //gallery controlls container animation
+                    $('.thumbnail-upload-img').hover(function(){
+                   		$(this).find('.gallery-controls').remove();
+                   		$(this).prepend('<div class="thumbnail-controls pull-right">'+
+                   							'<a href="#" class="btn-product-photo-delete btn" data-id="' + resp.id + '"><i class="icon-remove"></i></a>'+
+                   						'</div>');
+                        $('.btn-product-photo-delete').on('click', function(e) {
+                            e.preventDefault();
+                            var that = this;
+                            $.ajax({
+                                url: "/admin/{{$lang}}/product/removePhoto.html",
+                                type: 'post',
+                                data: {
+                                    id: $(this).data('id')
+                                }
+                            }).done(function(resp) {
+                                $(that).parents('.thumbnail').fadeOut();
+                            });
+
+                        });
+                   		$(this).find('.thumbnail-controls').stop().animate({'margin-top':'-1'},400,'easeInQuint');
+                   	},function(){
+                   		$(this).find('.thumbnail-controls').stop().animate({'margin-top':'-30'},200,'easeInQuint',function(){
+                   				$(this).remove();
+                   		});
+                   	});
                 }
                 else {
                     input.val(resp[i]);
@@ -312,6 +345,10 @@ $(document).ready(function(){
             }
         });
     });
+
+
+
+
 
 
 

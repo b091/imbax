@@ -71,7 +71,7 @@
 
                 <div class="control-group">
 
-                    <div class="control-group">
+                    <div class="control-group thumbnail-upload">
                         <label class="control-label" for="fileInput-product">Miniaturka</label>
                         <div class="controls">
                             <div id="uniform-fileInput" class="uploader">
@@ -82,6 +82,8 @@
                         </div>
                     </div>
                 </div>
+
+
             </form>
 
         </div>

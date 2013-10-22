@@ -15,8 +15,14 @@ class ProductController extends Controller
         $file = Input::file('photo');
         if(!empty($file)){
             $filename = uniqid() . '.' . $file->getClientOriginalExtension();
+
+            if(!empty($product->photo))
+            {
+                unlink('files' . DIRECTORY_SEPARATOR . 'products' . DIRECTORY_SEPARATOR . $product->photo);
+            }
+
             $product->photo = $filename;
-            $file->move('files' . DIRECTORY_SEPARATOR . 'products', $filename);
+            $file->move('files' . DIRECTORY_SEPARATOR . 'products',  $filename);
         }
 
         $product->save();
@@ -25,6 +31,15 @@ class ProductController extends Controller
         {
             $product->options()->sync($options);
         }
+    }
+
+    public function removePhoto($lang)
+    {
+        $id = Input::get('id');
+        $product = Product::find($id);
+        unlink('files' . DIRECTORY_SEPARATOR . 'products' . DIRECTORY_SEPARATOR . $product->photo);
+        $product->photo = '';
+        $product->save();
     }
 
     public function add($lang)
@@ -52,7 +67,9 @@ class ProductController extends Controller
     public function remove()
     {
         $id = Input::get('id');
-        Product::find($id)->options()->detach();
+        $product = Product::find($id);
+        unlink('files' . DIRECTORY_SEPARATOR . 'products' . DIRECTORY_SEPARATOR . $product->photo);
+        $product->options()->detach();
         Product::destroy($id);
     }
 

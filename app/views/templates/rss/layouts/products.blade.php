@@ -47,7 +47,10 @@
             {{$item->description}}
             <br/>
             <br/>
-            <img src="/{{$templateDir}}/images/{{$item->photo}}" alt="..." class="pull-left img-responsive"/>
+            @foreach($item->options as $option)
+                <div><span style="background-color: {{$option->color}}; widyh:50px; height: 50px;">&nbsp&nbsp&nbsp&nbsp</span></span> <span>{{$option->title}}</span></div>
+            @endforeach
+<!--            <img src="/{{$templateDir}}/images/{{$item->photo}}" alt="..." class="pull-left img-responsive"/>-->
             <br/><br/><br/>
             <br/><br/><br/>
             <br/><br/><br/>

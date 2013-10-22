@@ -68,7 +68,10 @@ class ProductController extends Controller
     {
         $id = Input::get('id');
         $product = Product::find($id);
-        unlink('files' . DIRECTORY_SEPARATOR . 'products' . DIRECTORY_SEPARATOR . $product->photo);
+        if(!empty($product->photo))
+        {
+            unlink('files' . DIRECTORY_SEPARATOR . 'products' . DIRECTORY_SEPARATOR . $product->photo);
+        }
         $product->options()->detach();
         Product::destroy($id);
     }

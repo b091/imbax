@@ -43,11 +43,13 @@
 
 @section('content')
 <br/>
-<div id="links">
+<div id="links" class="row">
     @foreach($gallery as $image)
-    <a href="/files/gallery/{{$image->photo}}" title="{{$image->name}}" data-gallery>
-        <img src="/files/gallery/{{$image->photo}}" alt="{{$image->name}}" width="100px" height="100px"/>
+    <div class="col-sm-6 col-md-3">
+    <a href="/files/gallery/{{$image->photo}}" title="{{$image->name}}" class="thumbnail" data-gallery>
+        <img src="/files/gallery/{{$image->photo}}" alt="{{$image->name}}" width="120px" height="120px" />
     </a>
+    </div>
     @endforeach
 </div>
 @stop

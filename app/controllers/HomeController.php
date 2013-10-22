@@ -26,6 +26,7 @@ class HomeController extends BaseController
             ->with('content', $currentpage->content)
             ->with('templateDir', 'templates/rss')
             ->with('product', Product::where('menu_id', '=', $currentpage->id)->get())
+            ->with('homepageproduct', Product::where('specjal', '=', true)->get()) //@todo i po langu np
             ->with('langs', Langs::all())
             ->with('gallery', Gallery::where('menu_id', '=', $currentpage->id)->get())
             ->with('currentlang', $lang);

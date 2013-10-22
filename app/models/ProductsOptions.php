@@ -13,5 +13,8 @@ class ProductsOptions extends Eloquent
      */
     protected $table = 'products_options';
 
-
+    public function product()
+    {
+        return $this->belongsToMany('Product', 'product_options');
+    }
 }

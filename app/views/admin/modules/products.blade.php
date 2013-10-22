@@ -21,7 +21,8 @@
                 <tr>
                     <th>Nazwa</th>
                     <th>Data dodania</th>
-                    <th>Specjalna</th>
+                    <th>Główna</th>
+                    <th>Włączona</th>
                     <th>Opcje</th>
                     <th>Akcje</th>
                 </tr>
@@ -31,8 +32,9 @@
                 @foreach($products as $item)
                 <tr>
                     <td>{{$item->name}}</td>
-                    <td class="center">{{$item->created_at}}</td>
-                    <td class="center"><span class="icon32 @if($item->specjal == "1") icon-check @else icon-cancel  @endif" ></span> </td>
+                    <td class="center">{{substr($item->created_at, 0, -8)}}</td>
+                    <td class="center"><span class="icon32 @if($item->specjal == "1") icon-check @else icon-cancel @endif" ></span> </td>
+                    <td class="center"><span class="icon32 @if($item->disabled == "0") icon-check @else icon-cancel @endif" ></span> </td>
                     <td class="center">
                         @foreach ($item->options as $option)
                             <span class="label" style="background-color: {{$option->color}};">
@@ -43,11 +45,9 @@
                     <td class="center" width="92px">
                         <a class="btn btn-info btn-product-edit" href="#" data-id="{{$item->id}}">
                             <i class="icon-edit icon-white"></i>
-                            Edytuj
                         </a>
                         <a class="btn btn-danger confirm-delete" href="#" data-id="{{$item->id}}" data-link="/admin/{{$lang}}/product/remove.html">
                             <i class="icon-trash icon-white"></i>
-                            Usuń
                         </a>
                     </td>
                 </tr>
@@ -83,7 +83,7 @@
                 <tr>
                     <td>{{$item->title}}</td>
                     <td class="center">
-                        <span class="label label-warning">{{$item->color}}</span>
+                        <span class="label" style="background-color: {{$item->color}};">{{$item->color}}</span>
                     </td>
                     <td class="center">
                         <a class="btn btn-info btn-product-option-edit" href="#" data-id='"{{$item->id}}"'>
@@ -97,6 +97,7 @@
                     </td>
                 </tr>
                 @endforeach
+
                 </tbody>
             </table>
         </div>

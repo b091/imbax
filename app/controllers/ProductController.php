@@ -3,22 +3,33 @@
 class ProductController extends Controller
 {
 
-    public function add($lang)
+    private function doChange(Product $product)
     {
-        $product = new Product();
-
-
         $product->name = Input::get('name');
         $product->description = Input::get('description', '');
         $product->specjal = Input::get('specjal', false) == 'on';
+        $product->disabled = Input::get('disabled', false) == 'on';
         $product->menu_id = Input::get('menu_id');
         $options = Input::get('options');
 
+        $file = Input::file('photo');
+        if(!empty($file)){
+            $filename = uniqid() . '.' . $file->getClientOriginalExtension();
+            $product->photo = $filename;
+            $file->move('files' . DIRECTORY_SEPARATOR . 'products', $filename);
+        }
 
         $product->save();
 
-        $product->options()->sync($options);
+        if(!empty($options))
+        {
+            $product->options()->sync($options);
+        }
+    }
 
+    public function add($lang)
+    {
+        $this->doChange(new Product());
         return Redirect::to($_SERVER['HTTP_REFERER']);
     }
 
@@ -32,18 +43,7 @@ class ProductController extends Controller
 
     public function update()
     {
-        $product = Product::find(Input::get('id'));
-
-        $product->name = Input::get('name');
-        $product->description = Input::get('description', '');
-        $product->specjal = Input::get('specjal', false) == 'on';
-        $product->menu_id = Input::get('menu_id');
-        $options = Input::get('options');
-
-
-        $product->save();
-
-        $product->options()->sync($options);
+        $this->doChange(Product::find(Input::get('id')));
 
         return Redirect::to($_SERVER['HTTP_REFERER']);
     }

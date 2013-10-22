@@ -178,6 +178,7 @@
             "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
             "save table contextmenu directionality emoticons template paste textcolor"
         ],
+        resize: "both",
         file_browser_callback: function (field_name, url, type, win) {
             tinymce.activeEditor.windowManager.open({
                 file: '/admin/pl/elfinder/tinymce',// use an absolute path!
@@ -205,6 +206,8 @@ $(document).ready(function(){
 
     $('.btn-product-add').click(function(e){
         e.preventDefault();
+        $('#product-add-form input[name="specjal"]').parents('span').removeClass('checked');
+        $('#product-add-form input[name="specjal"]').prop('checked', true);
         $('#product-add-form')[0].reset();
         $('#product-add-form').attr("action","/admin/{{$lang}}/product/add.html");
         $('#product-add').modal('show');
@@ -224,20 +227,40 @@ $(document).ready(function(){
                 id: $(this).data('id')
             }
         }).done(function(resp) {
+            var input;
             for (var i in resp) {
-                $('#product-add-form input[name="'+i+'"]').val(resp[i]);
+
+                input = $('#product-add-form input[name="' + i + '"]');
+
                 if(i == 'description')
                 {
                     tinyMCE.get('producttinymce').setContent(resp[i]);
                 }
                 else if (i == 'options')
                 {
-                    console.log(resp[i]);
                     $(resp[i]).each(function(i, item){
-                        var selector = "#product-add-form :checkbox[name='options[]'][value='"+item.id+"']";
+                        var selector = "#product-add-form :checkbox[name='options[]'][value='" + item.id + "']";
                         $(selector).prop('checked', true);
                         $(selector).parents('span').toggleClass('checked');
                     });
+                }
+                else if(i == 'specjal' || i == 'disabled')
+                {
+                    resp[i] = resp[i] == 1 ? 'on' : 'off';
+                    if (resp[i] == 'on'){
+                        $(input).prop('checked', true);
+                        $(input).parents('span').addClass('checked');
+                    }
+                    else {
+                        $(input).prop('checked', false);
+                        $(input).parents('span').removeClass('checked');
+                    }
+                }
+                else if (i == 'photo'){
+                    //append
+                }
+                else {
+                    input.val(resp[i]);
                 }
             }
         });

@@ -36,7 +36,9 @@ class ProductsOptionsController extends Controller
 
     public function remove()
     {
-        ProductsOptions::destroy(Input::get('id'));
+        $id = Input::get('id');
+        ProductsOptions::find($id)->product()->detach();
+        ProductsOptions::destroy($id);
         return $_SERVER['HTTP_REFERER'];
     }
 

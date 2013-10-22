@@ -6,13 +6,14 @@
     </div>
     <div class="modal-body">
         <div class="box-content">
-            <form class="form-horizontal" method="post" action="/admin/{{$lang}}/product/add.html" id="product-add-form">
+            <form class="form-horizontal" method="post" action="/admin/{{$lang}}/product/add.html" id="product-add-form" enctype="multipart/form-data">
 
                 <input type="hidden" name="menu_id" value="{{$menuelement->id}}"/>
                 <input type="hidden" name="id"/>
 
                 <div class="control-group">
                     <label class="control-label" for="typeahead">Nazwa</label>
+
                     <div class="controls">
                         <input type="text" name="name">
                     </div>
@@ -20,6 +21,7 @@
 
                 <div class="control-group">
                     <label class="control-label" for="typeahead">Treść</label>
+
                     <div class="controls">
                         <textarea name="description" id="producttinymce"></textarea>
                     </div>
@@ -27,6 +29,7 @@
 
                 <div class="control-group">
                     <label class="control-label">Opcje</label>
+
                     <div class="controls">
                         @foreach($productsoptions as $item)
                         <label class="checkbox inline">
@@ -43,14 +46,42 @@
 
 
                 <div class="control-group">
-                    <label class="control-label" for="typeahead">Główna</label>
-                    <div class="controls">
-                        <input data-no-uniform="true" type="checkbox" class="iphone-toggle" name="specjal">
-                    </div>
+                    <label class="control-label" for="specjal">Główna</label>
+
+                    <label class="checkbox inline">
+                        <div class="checker">
+                            <span>
+                                <input type="checkbox" name="specjal" id="specjal" style="opacity: 0;" value="on">
+                            </span>
+                        </div>
+                    </label>
                 </div>
 
+                <div class="control-group">
+                    <label class="control-label" for="specjal">Wyłączona</label>
 
+                    <label class="checkbox inline">
+                        <div class="checker">
+                           <span>
+                               <input type="checkbox" name="disabled" id="disabled" style="opacity: 0;" value="on">
+                           </span>
+                        </div>
+                    </label>
+                </div>
 
+                <div class="control-group">
+
+                    <div class="control-group">
+                        <label class="control-label" for="fileInput-product">Miniaturka</label>
+                        <div class="controls">
+                            <div id="uniform-fileInput" class="uploader">
+                                <input id="fileInput-product" class="input-file uniform_on" type="file" size="19" style="opacity: 0;" name="photo">
+                                <span class="filename" style="-moz-user-select: none;">Nie wybrano pliku</span>
+                                <span class="action" style="-moz-user-select: none;">Z dysku</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </form>
 
         </div>
@@ -74,6 +105,7 @@
             <form class="form-horizontal" method="post" action="/admin/{{$lang}}/productsoptions/add.html" id="product-option-add-form">
 
                 <input type="hidden" name="id"/>
+
                 <div class="control-group">
                     <label class="control-label" for="typeahead">Nazwa</label>
 

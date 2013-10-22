@@ -20,7 +20,8 @@ class CreateProductTable extends Migration {
             $table->longText('description');
             $table->string('short_description')->default('');
             $table->boolean('specjal')->default(false);
-            $table->string('foto')->default('');
+            $table->boolean('disabled')->default(false);
+            $table->string('photo')->default('');
 			$table->timestamps();
 
             $table->foreign('menu_id')->references('id')->on('menu');

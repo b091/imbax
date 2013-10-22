@@ -13,5 +13,4 @@ class ProductOptions extends Eloquent
      */
     protected $table = 'product_options';
 
-
 }

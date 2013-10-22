@@ -8,10 +8,9 @@
 
     <div class="col-lg-6">
         <br/>
-        @foreach($product as $item)
-        @if ($item->specjal == 1)
+        @foreach($homepageproduct as $item)
         <div class="thumbnail2 hidden-xs">
-            <img src="/{{$templateDir}}/images/{{$item->photo}}" alt="..." class="pull-left img-responsive"/>
+            <img src="/files/products/{{$item->photo}}" alt="{{$item->name}}" class="pull-left img-responsive" width="70px"/>
 
             <div class="pull-left" style="">
                 <h4>&nbsp;&nbsp; {{$item->name}}</h4>
@@ -35,7 +34,6 @@
             </div>
         </a>
         <br/>
-        @endif
         @endforeach
     </div>
 </div>

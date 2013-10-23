@@ -47,12 +47,17 @@ class AdminController extends Controller
         }
     }
 
+    public function configuration()
+    {
+        return View::make('admin.modules.configuration')->with('configurationform', Configuration::whereRaw('lang_code = ?', array(App::getLocale()))->get() );
+    }
+
     /**
      * @return mixed
      */
     public function dashboard()
     {
-        return View::make('admin.dashboard');
+        return  View::make("admin.modules.dashboard");
     }
 
     /**

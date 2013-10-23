@@ -3,7 +3,7 @@
     <div class="navbar-inner">
         <div class="container-fluid">
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
-                <span class="icon-bar"></span>
+                <span class="icon-bar"><a href="/admin/{{App::getLocale()}}/dashboard.html" >Panel</a></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
@@ -17,7 +17,7 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#"><i class="icon-cog"></i> Konfiguracja</a></li>
+                        <li><a href="/admin/{{App::getLocale()}}/configuration.html"><i class="icon-cog"></i> Konfiguracja</a></li>
                         <li class="divider"></li>
                         @foreach($langs as $item)
                             <li><a href="/admin/{{$item->code}}/dashboard.html"><i class="famfamfam-flag-{{$item->code}}"></i> {{$item->name}}</a></li>

@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <meta name="description" content="{{$pageDescription}}">
     <meta name="author" content="">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/famfamfam_flags/famfamfam-flags.css" rel="stylesheet">
     <link rel="shortcut icon" href="/{{$templateDir}}/ico/favicon.png">
 
-    <title>IMBAX</title>
+    <title>{{$pageTitle}}</title>
     @stylesheets('bootstrap')
     @javascripts('bootstrap-js')
     <!-- Custom styles for this template -->
@@ -97,7 +97,7 @@ a:hover {
             @endforeach
         </div>
         <div class="col-md-9 col-xs-6 col-sm-9">
-            <div class="pull-right topbar-text-rss"><span class="glyphicon glyphicon-earphone"></span> {{Lang::get('label.customer-service')}}  : <span style="color: #fff;">+48 504 500 6700</span>
+            <div class="pull-right topbar-text-rss"><span class="glyphicon glyphicon-earphone"></span> {{Lang::get('label.customer-service')}}  : <span style="color: #fff;">{{$pagePhone}}</span>
             </div>
         </div>
     </div>

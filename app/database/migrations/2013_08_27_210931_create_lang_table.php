@@ -14,7 +14,7 @@ class CreateLangTable extends Migration {
 	{
 		Schema::create('lang', function(Blueprint $table)
 		{
-            $table->string('code');
+            $table->string('code')->index();
             $table->string('name');
             $table->boolean('default')->default(false);
 		});

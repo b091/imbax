@@ -37,6 +37,9 @@ class HomeController extends BaseController
             ->with('productspagelink', $productsPage->pagelink)
             ->with('langs', Langs::all())
             ->with('gallery', Gallery::where('menu_id', '=', $currentpage->id)->get())
+            ->with('pageTitle', Configuration::whereRaw('lang_code = ? AND name = ?', array('pl', 'title'))->firstOrFail()->value)
+            ->with('pageDescription', Configuration::whereRaw('lang_code = ? AND name = ?', array('pl', 'description'))->firstOrFail()->value)
+            ->with('pagePhone', Configuration::whereRaw('lang_code = ? AND name = ?', array('pl', 'phone'))->firstOrFail()->value)
             ->with('currentlang', $lang);
     }
 }

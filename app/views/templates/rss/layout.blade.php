@@ -24,6 +24,11 @@
 
 <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
    <script src="/packages/gallery/js/bootstrap-image-gallery.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('#carousel-rss').carousel();
+    });
+    </script>
 </head>
 
 <body>
@@ -47,10 +52,11 @@
 @yield('topmenu')
 @include('templates.rss.topbanner')
 
-
-<div class="container">
-    @yield('content')
-    <br/>
+<div class="col-md-12" style="background-color: #ffffff;">
+    <div class="container">
+        @yield('content')
+        <br/>
+    </div>
 </div>
 
 @include('templates.rss.footer')

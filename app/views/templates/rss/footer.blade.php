@@ -4,9 +4,8 @@
         <div class="col-lg-2 col-xs-3">
             <a href="/"><img src="/{{$templateDir}}/images/logo_footer.png" class="img-responsive"></a>
         </div>
-        <div class="col-lg-5">
-            <p><strong>At vero eos et accusamus et</strong> iusto odio dignissimos ducimus qui blanditiis praesentium
-                voluptatum deleniti atque corrupti quos dolores et. </p>
+        <div class="col-lg-5" style="line-height: 22pt;">
+            <p><strong>Real Steal Sweden</strong> &copy; 2013. All Rights Reserved. </p>
         </div>
         <div class="col-lg-5 hidden-xs">
             @yield('bottommenu')

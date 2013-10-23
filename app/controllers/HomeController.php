@@ -16,6 +16,13 @@ class HomeController extends BaseController
         }
 
         $currentpage = Menu::whereRaw('pagelink = ? AND lang = ?', array($pagelink, $lang))->firstOrFail();
+        $productsPage = Menu::whereRaw('layout = ? AND lang = ?', array('products', $lang))->firstOrFail();
+        $homepageProducts = array();
+
+        if(!empty($productsPage->id))
+        {
+            $homepageProducts = Product::whereRaw('specjal = ? AND menu_id = ?', array(true, $productsPage->id))->get();
+        }
 
         $menu = Menu::whereRaw('lang = ?', array($lang))->get();
 
@@ -26,7 +33,8 @@ class HomeController extends BaseController
             ->with('content', $currentpage->content)
             ->with('templateDir', 'templates/rss')
             ->with('product', Product::where('menu_id', '=', $currentpage->id)->get())
-            ->with('homepageproduct', Product::where('specjal', '=', true)->get()) //@todo i po langu np
+            ->with('homepageproduct', $homepageProducts) //@todo i po langu np
+            ->with('productspagelink', $productsPage->pagelink)
             ->with('langs', Langs::all())
             ->with('gallery', Gallery::where('menu_id', '=', $currentpage->id)->get())
             ->with('currentlang', $lang);

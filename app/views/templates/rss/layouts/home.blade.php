@@ -8,9 +8,11 @@
 
     <div class="col-lg-6">
         <br/>
+        <br/>
+        <br/>
         @foreach($homepageproduct as $item)
         <div class="thumbnail2 hidden-xs">
-            <img src="/files/products/{{$item->photo}}" alt="{{$item->name}}" class="pull-left img-responsive" width="70px"/>
+            <img src="/files/products/{{$item->photo}}" alt="{{$item->name}}" class="pull-left img-responsive" width="84px"/>
 
             <div class="pull-left" style="">
                 <h4>&nbsp;&nbsp; {{$item->name}}</h4>
@@ -18,7 +20,7 @@
                 <p>&nbsp;&nbsp;&nbsp; {{$item->short_description}}</p>
             </div>
             <br/>
-            <a href="#" class="btn-sm btn-primary pull-right">{{Lang::get('buttons.check-offer')}} </a>
+            <a href="/{{$currentlang}}/{{$productspagelink}}#product{{$item->id}}" class="btn-sm btn-primary pull-right">{{Lang::get('buttons.check-offer')}} </a>
         </div>
 
 
@@ -28,7 +30,6 @@
 
                 <div class="col-xs-8 col-sm-9">
                     <h4>{{$item->name}}</h4>
-
                     <p>&nbsp;&nbsp;&nbsp;{{$item->short_description}}</p>
                 </div>
             </div>

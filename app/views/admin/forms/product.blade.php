@@ -20,6 +20,14 @@
                 </div>
 
                 <div class="control-group">
+                    <label class="control-label" for="typeahead">Opis</label>
+
+                    <div class="controls">
+                        <input type="text" name="short_description">
+                    </div>
+                </div>
+
+                <div class="control-group">
                     <label class="control-label" for="typeahead">Treść</label>
 
                     <div class="controls">

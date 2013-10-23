@@ -198,6 +198,14 @@
 
 $(document).ready(function(){
 
+
+    $('#menu-add').on('show', function () {
+
+        $(this).find('.modal-body').css({width:'auto',
+                                   height:'auto',
+                                  'max-height':'100%'});
+    });
+
     $('.btn-menu-add').click(function(e){
         e.preventDefault();
         $('#menu-add-form')[0].reset();

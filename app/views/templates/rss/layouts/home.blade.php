@@ -20,7 +20,7 @@
                 <p>&nbsp;&nbsp;&nbsp; {{$item->short_description}}</p>
             </div>
             <br/>
-            <a href="/{{$currentlang}}/{{$productspagelink}}#product{{$item->id}}" class="btn-sm btn-primary pull-right">{{Lang::get('buttons.check-offer')}} </a>
+            <a href="/{{$currentlang}}/{{$productspagelink}}#product{{$item->id}}" class="btn btn-sm btn-primary pull-right">{{Lang::get('buttons.check-offer')}} </a>
         </div>
 
 

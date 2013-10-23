@@ -21,18 +21,73 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,700,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="/{{$templateDir}}/css/rss.css" />
 
+<script type="text/css">
+a:hover {
+    text-decoration: none !important;
+}
+</script>
 
 <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
    <script src="/packages/gallery/js/bootstrap-image-gallery.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function(){
+
+   <script type="text/javascript">
+
+    !function ($) {
+
+      $(function(){
+
+        var $window = $(window)
+        var $body   = $(document.body)
+
+        var navHeight = $('.navbar').outerHeight(true) + 10
+
+        $body.scrollspy({
+          target: '.bs-sidebar',
+          offset: navHeight
+        })
+
+        $window.on('load', function () {
+          $body.scrollspy('refresh')
+        })
+
+        $('.bs-docs-container [href=#]').click(function (e) {
+          e.preventDefault()
+        })
+
+        // back to top
+        setTimeout(function () {
+          var $sideBar = $('.bs-sidebar')
+
+          $sideBar.affix({
+            offset: {
+              top: function () {
+                var offsetTop      = $sideBar.offset().top
+                var sideBarMargin  = parseInt($sideBar.children(0).css('margin-top'), 10)
+                var navOuterHeight = $('.bs-docs-nav').height()
+
+                return (this.top = offsetTop - navOuterHeight - sideBarMargin)
+              }
+            , bottom: function () {
+                return (this.bottom = $('.bs-footer').outerHeight(true))
+              }
+            }
+          })
+        }, 100)
+
+        setTimeout(function () {
+          $('.bs-top').affix()
+        }, 100);
+
         $('#carousel-rss').carousel();
-    });
+
+    })
+
+    }(window.jQuery)
+
     </script>
 </head>
 
 <body>
-
 <div class="row topbar-rss">
     <div class="container">
         <div class="col-xs-6 col-sm-3 topbar-text-rss">
@@ -60,7 +115,5 @@
 </div>
 
 @include('templates.rss.footer')
-
-
 </body>
 </html>

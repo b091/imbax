@@ -33,8 +33,13 @@
 <div class="row">
     <div class="col-md-3">
 
-        @include('templates.rss.menu')
-        @yield('leftmenu')
+        <div data-spy="affix" class="bs-sidebar" role="complementary" id="left-navbar">
+            <ul class="nav nav-stacked asd">
+                @foreach($product as $key => $item)
+                <li class="@if($key == 0) active @endif"><a href="#product{{$item->id}}">{{$item->name}}</a></li>
+                @endforeach
+            </ul>
+        </div>
 
     </div>
 
@@ -42,15 +47,14 @@
 
         @foreach($product as $key => $item)
         <div>
-            <h2 id="product{{$key}}">{{$item->name}}</h2>
+            <h2 id="product{{$item->id}}">{{$item->name}}</h2>
+            <div>
+            @foreach($item->options as $option)
+                <span style="background-color: {{$option->color}}; width:50px; height: 50px;">&nbsp;&nbsp;&nbsp;&nbsp;</span> <span>{{$option->title}}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+            @endforeach
+            </div>
             <br/>
             {{$item->description}}
-            <br/>
-            <br/>
-            @foreach($item->options as $option)
-                <div><span style="background-color: {{$option->color}}; widyh:50px; height: 50px;">&nbsp&nbsp&nbsp&nbsp</span></span> <span>{{$option->title}}</span></div>
-            @endforeach
-<!--            <img src="/{{$templateDir}}/images/{{$item->photo}}" alt="..." class="pull-left img-responsive"/>-->
             <br/><br/><br/>
             <br/><br/><br/>
             <br/><br/><br/>

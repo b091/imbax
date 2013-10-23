@@ -7,6 +7,7 @@ class ProductController extends Controller
     {
         $product->name = Input::get('name');
         $product->description = Input::get('description', '');
+        $product->short_description = Input::get('short_description', '');
         $product->specjal = Input::get('specjal', false) == 'on';
         $product->disabled = Input::get('disabled', false) == 'on';
         $product->menu_id = Input::get('menu_id');

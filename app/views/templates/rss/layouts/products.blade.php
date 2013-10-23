@@ -19,9 +19,6 @@
     .bs-sidebar .nav > .active > a, .bs-sidebar .nav > .active:hover > a, .bs-sidebar .nav > .active:focus > a {
         background-color: #33383D;
         color: #ffffff;
-        /*border-right: 1px solid #563D7C;*/
-        /*color: #563D7C;*/
-        /*font-weight: bold;*/
     }
 
 
@@ -33,8 +30,8 @@
 <div class="row">
     <div class="col-md-3">
 
-        <div data-spy="affix" class="bs-sidebar" role="complementary" id="left-navbar">
-            <ul class="nav nav-stacked asd">
+        <div class="bs-sidebar" >
+            <ul class="nav asd nav-stacked pcg-help-affix affix-top asdf hidden-sm hidden-md hidden-xs" data-spy="affix" >
                 @foreach($product as $key => $item)
                 <li class="@if($key == 0) active @endif"><a href="#product{{$item->id}}">{{$item->name}}</a></li>
                 @endforeach
@@ -48,9 +45,10 @@
         @foreach($product as $key => $item)
         <div>
             <h2 id="product{{$item->id}}">{{$item->name}}</h2>
+            <br/>
             <div>
             @foreach($item->options as $option)
-                <span style="background-color: {{$option->color}}; width:50px; height: 50px;">&nbsp;&nbsp;&nbsp;&nbsp;</span> <span>{{$option->title}}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                <span style="background-color: {{$option->color}}; width:90px; height: 90px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span><strong>{{$option->title}}<strong</span>&nbsp;&nbsp;&nbsp;&nbsp;
             @endforeach
             </div>
             <br/>

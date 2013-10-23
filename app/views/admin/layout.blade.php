@@ -13,7 +13,7 @@
             </div>
         </noscript>
 
-        <div id="content" class="span10">hfjjhgfjy
+        <div id="content" class="span10">
             @yield('content')
         </div>
     </div>

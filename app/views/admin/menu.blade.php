@@ -3,7 +3,7 @@
     <div class="navbar-inner">
         <div class="container-fluid">
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".top-nav.nav-collapse,.sidebar-nav.nav-collapse">
-                <span class="icon-bar"><a href="/admin/{{App::getLocale()}}/dashboard.html" >Panel</a></span>
+                <span class="icon-bar"><a class="btn" href="/admin/{{App::getLocale()}}/dashboard.html" >Panel</a></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>

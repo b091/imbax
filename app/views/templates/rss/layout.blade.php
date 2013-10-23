@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{$pageDescription}}">
-    <meta name="author" content="">
+    <meta name="Keywords" content="{{$pageKeywords}}">
+
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/famfamfam_flags/famfamfam-flags.css" rel="stylesheet">
     <link rel="shortcut icon" href="/{{$templateDir}}/ico/favicon.png">
@@ -20,12 +21,6 @@
 
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,700,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="/{{$templateDir}}/css/rss.css" />
-
-<script type="text/css">
-a:hover {
-    text-decoration: none !important;
-}
-</script>
 
 <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
    <script src="/packages/gallery/js/bootstrap-image-gallery.js"></script>
@@ -96,8 +91,12 @@ a:hover {
                 <a href="/{{$item->code}}/"><i class="famfamfam-flag-{{$item->code}}"></i></a>
             @endforeach
         </div>
-        <div class="col-md-9 col-xs-6 col-sm-9">
-            <div class="pull-right topbar-text-rss"><span class="glyphicon glyphicon-earphone"></span> {{Lang::get('label.customer-service')}}  : <span style="color: #fff;">{{$pagePhone}}</span>
+        <div class="col-md-9 col-xs-6 col-sm-9 hidden-sm hidden-xs">
+            <div class="pull-right topbar-text-rss"><span class="glyphicon glyphicon-earphone"></span><span> {{Lang::get('label.customer-service')}} :</span><span style="color: #fff;"> {{$pagePhone}}</span>
+            </div>
+        </div>
+        <div class="col-md-9 col-xs-6 col-sm-9 hidden-md hidden-lg">
+            <div class="pull-right topbar-text-rss"><span class="glyphicon glyphicon-earphone"></span><span style="color: #fff;"> {{$pagePhone}}</span>
             </div>
         </div>
     </div>

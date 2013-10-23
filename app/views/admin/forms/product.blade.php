@@ -1,10 +1,10 @@
 @section('productmodal')
-<div class="modal hide fade" id="product-add" style="width: 900px;">
+<div class="modal hide fade" id="product-add" style="width: 90%; left: 5%; margin-left:auto;margin-right:auto; height: 90%; top:30%;">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">×</button>
         <h3>Produkt</h3>
     </div>
-    <div class="modal-body">
+    <div class="modal-body5">
         <div class="box-content">
             <form class="form-horizontal" method="post" action="/admin/{{$lang}}/product/add.html" id="product-add-form" enctype="multipart/form-data">
 
@@ -128,7 +128,7 @@
 
                     <div class="controls">
                         <div class="input-append color" data-color="#000000" data-color-format="hex" id="colorpicker">
-                            <input type="text" class="span6" value="" name="color" readonly>
+                            <input type="text" class="span6" value="" name="color">
                             <span class="add-on"><i style="background-color: #000000;"></i></span>
                         </div>
                     </div>

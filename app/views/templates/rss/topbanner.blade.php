@@ -7,12 +7,12 @@
     </div>
 
 
-    <div class="container hidden-sm hidden-md hidden-lg">
-        <div class="topinfo-rss" style="border-bottom: 1px solid #e1e1e8 !important;">
-            <span>{{Lang::get('label.buckets')}}</span><br/><span style="color: #FFC04D;"> Real Steel Sweden</span>
-            <a class="btn btn-warning btn-sm pull-right" href="#">{{Lang::get('buttons.see-products')}}</a></p>
-        </div>
-    </div>
+<!--    <div class="container hidden-sm hidden-md hidden-lg">-->
+<!--        <div class="topinfo-rss" style="border-bottom: 1px solid #e1e1e8 !important;">-->
+<!--            <span style="font-family: rss-roboto-italic;">{{Lang::get('label.buckets')}}</span><br/><span style="font-family: rss-gothic;  color: #FFC04D;"> Real Steel Sweden</span>-->
+<!--           <a class="btn btn-warning btn-sm pull-right" href="#">{{Lang::get('buttons.see-products')}}</a></p>
+<!--        </div>-->
+<!--    </div>-->
     @include('templates.rss.carousel')
 @else
 <!--<div class="topbanner-rss hidden-xs">-->

@@ -1,6 +1,5 @@
 <div class="col-md-12 footer footer-rss">
     <div class="container">
-
         <div class="col-lg-2 col-xs-3">
             <a href="/"><img src="/{{$templateDir}}/images/logo_footer.png" class="img-responsive"></a>
         </div>

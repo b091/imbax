@@ -1,37 +1,11 @@
 @extends('templates.rss.layout')
 
 @section('content')
-
-<style type="text/css">
-
-    .asd {
-        border-radius: 4px 4px 4px 4px;
-        border: 1px solid #DDDDDD;
-        border-top: none;
-    }
-
-    .asd > li {
-        border-top: 1px solid #DDDDDD;
-    }
-
-    .bs-sidebar .nav > .active > a, .bs-sidebar .nav > .active:hover > a, .bs-sidebar .nav > .active:focus > a {
-        background-color: #33383D;
-        color: #ffffff;
-    }
-
-</style>
-
-<br/>
-<br/>
-<br/>
+<br/><br/><br/>
 <div class="row">
     <div class="col-md-3">
-
-<!--        <div class="bs-sidebar" >-->
-<!--            <ul class="nav asd nav-stacked pcg-help-affix affix-top asdf hidden-sm hidden-md hidden-xs" data-spy="affix" >-->
-
         <div data-spy="affix" data-offset-top="10" class="bs-sidebar" role="complementary">
-            <ul class="nav nav-stacked pcg-help-affix affix-top asd hidden-sm hidden-xs">
+            <ul class="nav nav-stacked pcg-help-affix affix-top product-left-menu hidden-sm hidden-xs">
                 @foreach($product as $key => $item)
                 <li class="@if($key == 0) active @endif"><a href="#product{{$item->id}}">{{$item->name}}</a></li>
                 @endforeach
@@ -40,7 +14,6 @@
     </div>
 
     <div class="col-md-6" id="scroll-pane" data-spy="scroll" data-target="#left-navbar">
-
         @foreach($product as $key => $item)
         <div>
             <h2 id="product{{$item->id}}">{{$item->name}}</h2>
@@ -55,13 +28,7 @@
             <br/><br/><br/>
         </div>
         @endforeach
-
-
     </div>
 </div>
-<br/>
-<br/>
-<br/>
-<br/>
-
+<br/><br/><br/><br/>
 @stop

@@ -1,8 +1,6 @@
-
 <div class="carousel-rss hidden-xs" id="carousel-rss" >
     <div class="container">
         <div class="carousel slide">
-
             <div class="carousel-inner">
                 @foreach(glob('files' . DIRECTORY_SEPARATOR . 'carousel' . DIRECTORY_SEPARATOR . "*.png") as $key => $img)
                 <div class="item @if ($key == 0) active @endif">

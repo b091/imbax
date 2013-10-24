@@ -24,84 +24,6 @@
 
     <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
     <script src="/packages/gallery/js/bootstrap-image-gallery.js"></script>
-
-    <script type="text/javascript">
-
-        !function ($) {
-
-            $(function () {
-
-                var $window = $(window)
-                var $body = $(document.body)
-
-                var navHeight = $('.navbar').outerHeight(true) + 10
-
-                $body.scrollspy({
-                    target: '.bs-sidebar',
-                    offset: navHeight
-                })
-
-                $window.on('load', function () {
-                    $body.scrollspy('refresh')
-                })
-
-                $('.bs-docs-container [href=#]').click(function (e) {
-                    e.preventDefault()
-                })
-
-                // back to top
-                setTimeout(function () {
-                    var $sideBar = $('.bs-sidebar')
-
-                    $sideBar.affix({
-                        offset: {
-                            top: function () {
-                                var offsetTop = $sideBar.offset().top
-                                var sideBarMargin = parseInt($sideBar.children(0).css('margin-top'), 10)
-                                var navOuterHeight = $('.bs-docs-nav').height()
-
-                                return (this.top = offsetTop - navOuterHeight - sideBarMargin)
-                            }, bottom: function () {
-                                return (this.bottom = $('.bs-footer').outerHeight(true))
-                            }
-                        }
-                    })
-                }, 100)
-
-                setTimeout(function () {
-                    $('.bs-top').affix()
-                }, 100);
-
-                $('#carousel-rss').carousel();
-
-            })
-
-        }(window.jQuery)
-
-    </script>
-
-
-    <style type="text/css">
-        .carousel-indicators {
-            margin-top:2px;
-        }
-        .carousel-indicators li {
-            background: url('/templates/rss/images/indicator.jpg') no-repeat;
-            cursor: pointer;
-            text-align: center;
-            border: none;
-            width: 15px;
-            height: 15px;
-        }
-
-        .carousel-indicators .active {
-            background: url('/templates/rss/images/indicator-active.jpg') no-repeat;
-            margin: 0;
-            width: 16px;
-            height: 16px;
-        }
-
-    </style>
 </head>
 
 <body>
@@ -137,5 +59,55 @@
 </div>
 
 @include('templates.rss.footer')
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        var $window = $(window),
+            $body = $(document.body),
+            navHeight = $('.navbar').outerHeight(true) + 10;
+
+        $body.scrollspy({
+            target: '.bs-sidebar',
+            offset: navHeight
+        })
+
+        $window.on('load', function () {
+            $body.scrollspy('refresh')
+        })
+
+        $('.bs-docs-container [href=#]').click(function (e) {
+            e.preventDefault()
+        })
+
+
+        setTimeout(function () {
+            var $sideBar = $('.bs-sidebar')
+
+            $sideBar.affix({
+                offset: {
+                    top: function () {
+                        var offsetTop = $sideBar.offset().top
+                        var sideBarMargin = parseInt($sideBar.children(0).css('margin-top'), 10)
+                        var navOuterHeight = $('.bs-docs-nav').height()
+
+                        return (this.top = offsetTop - navOuterHeight - sideBarMargin)
+                    }, bottom: function () {
+                        return (this.bottom = $('.bs-footer').outerHeight(true))
+                    }
+                }
+            })
+        }, 100)
+
+        setTimeout(function () {
+            $('.bs-top').affix()
+        }, 100);
+
+        $('#carousel-rss').carousel();
+    });
+
+</script>
+
 </body>
 </html>

@@ -30,27 +30,44 @@
         <br/>
         <br/>
 
-        <form>
+        <form id="send-form">
             <div class="form-group">
-                <input type="text" class="form-control input-lg" id="name" placeholder="{{Lang::get('label.name')}}"/>
+                <input type="text" class="form-control input-lg" name="name" placeholder="{{Lang::get('label.name')}}"/>
             </div>
 
             <div class="form-group">
-                <input type="text" class="form-control input-lg" id="surname" placeholder="{{Lang::get('label.surname')}}"/>
+                <input type="text" class="form-control input-lg" name="surname" placeholder="{{Lang::get('label.surname')}}"/>
             </div>
             <div class="form-group">
-                <input type="email" class="form-control input-lg" id="email" placeholder="{{Lang::get('label.email')}}"/>
+                <input type="email" class="form-control input-lg" name="email" placeholder="{{Lang::get('label.email')}}"/>
             </div>
 
             <div class="form-group">
-                <textarea class="form-control input-lg" id="mailmessage" placeholder="{{Lang::get('label.message')}}"></textarea>
+                <textarea class="form-control input-lg" name="mailmessage" placeholder="{{Lang::get('label.message')}}"></textarea>
             </div>
             <div class="text-center">
-            <button type="submit" class="btn btn-lg btn-info">{{Lang::get('buttons.send')}}</button>
+            <a href="#" class="btn btn-lg btn-info" id="btn-send-form">{{Lang::get('buttons.send')}}</a>
             </div>
         </form>
         <br/>
     </div>
 
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#btn-send-form').click(function(){
+            //
+            $.ajax({
+                      url: "/sendForm.html",
+                      type: 'post',
+                      data: $('#send-form').serialize()
+                  }).done(function(resp) {
+
+                });
+
+        })
+    });
+</script>
+
 @stop

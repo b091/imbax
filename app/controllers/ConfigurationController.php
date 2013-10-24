@@ -7,7 +7,6 @@ class ConfigurationController extends Controller
 
     public function update($lang)
     {
-        $config = Configuration::find(Input::get('id'));
 
         foreach($_POST as $key => $val)
         {

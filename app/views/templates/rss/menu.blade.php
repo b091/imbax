@@ -29,14 +29,3 @@
     @endforeach
 </ul>
 @stop
-
-
-@section('leftmenu')
-<div data-spy="affix" data-offset-top="10" class="bs-sidebar" role="complementary" id="left-navbar">
-    <ul class="nav nav-stacked asd">
-        @foreach($product as $key => $item)
-        <li><a href="#product{{$key}}">{{$item->name}}</a></li>
-        @endforeach
-    </ul>
-</div>
-@stop

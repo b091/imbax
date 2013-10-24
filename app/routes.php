@@ -32,6 +32,22 @@ Route::post('/admin/{lang}/configuration/update.html', 'ConfigurationController@
 Route::get('/admin/{lang}/{page?}', 'AdminController@index')->where(array('lang' => '[a-z]{2}', 'page' => '(.*\.html)'));
 Route::post('/admin/{lang}/{page?}', 'AdminController@index')->where(array('lang' => '[a-z]{2}', 'page' => '(.*\.html)'));
 
+
+Route::post(
+    '/sendForm.html',
+    function () {
+
+        $to      = Configuration::whereRaw('name = ? AND lang_code = ?', array('mail', 'pl'))->firstOrFail()->value;
+        $subject = 'Mail ze strony RSS';
+        $message = Input::get('mailmessage');
+        $headers = 'From: website@realsteelsweden.com' . "\r\n" .
+            'Reply-To: ' . Input::get('name') . ' ' . Input::get('surname') . '<' . Input::get('email') . '>' . "\r\n" .
+            'X-Mailer: PHP/' . phpversion();
+
+        mail($to, $subject, $message, $headers);
+    }
+);
+
 Route::group(
     array('before' => 'auth'),
     function () {

@@ -27,14 +27,16 @@
 <div class="row">
     <div class="col-md-3">
 
-        <div class="bs-sidebar" >
-            <ul class="nav asd nav-stacked pcg-help-affix affix-top asdf hidden-sm hidden-md hidden-xs" data-spy="affix" >
+<!--        <div class="bs-sidebar" >-->
+<!--            <ul class="nav asd nav-stacked pcg-help-affix affix-top asdf hidden-sm hidden-md hidden-xs" data-spy="affix" >-->
+
+        <div data-spy="affix" data-offset-top="10" class="bs-sidebar" role="complementary">
+            <ul class="nav nav-stacked pcg-help-affix affix-top asd hidden-sm hidden-xs">
                 @foreach($product as $key => $item)
                 <li class="@if($key == 0) active @endif"><a href="#product{{$item->id}}">{{$item->name}}</a></li>
                 @endforeach
             </ul>
         </div>
-
     </div>
 
     <div class="col-md-6" id="scroll-pane" data-spy="scroll" data-target="#left-navbar">

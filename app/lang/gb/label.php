@@ -12,5 +12,6 @@ return array(
     'buckets' => 'Buckets for excavators',
     'next' => 'Next',
     'previous' => 'Previous',
+    'send' => 'Message send'
 
 );

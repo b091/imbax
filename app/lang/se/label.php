@@ -12,4 +12,5 @@ return array(
     'buckets' => 'Skopor för grävmaskiner',
     'next' => 'Nästa',
     'previous' => 'Föregående',
+    'send' => 'Meddelande skicka'
 );

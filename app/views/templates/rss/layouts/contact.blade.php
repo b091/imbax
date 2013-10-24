@@ -21,7 +21,7 @@
 
     <div class="col-md-6">
         {{$content}}
-       </div>
+    </div>
     <br/>
     <br/>
 
@@ -46,7 +46,7 @@
                 <textarea class="form-control input-lg" name="mailmessage" placeholder="{{Lang::get('label.message')}}"></textarea>
             </div>
             <div class="text-center">
-            <a href="#" class="btn btn-lg btn-info" id="btn-send-form">{{Lang::get('buttons.send')}}</a>
+                <a href="#" class="btn btn-lg btn-info" id="btn-send-form">{{Lang::get('buttons.send')}}</a>
             </div>
         </form>
         <br/>
@@ -55,15 +55,16 @@
 </div>
 
 <script type="text/javascript">
-    $(document).ready(function(){
-        $('#btn-send-form').click(function(){
+    $(document).ready(function () {
+        $('#btn-send-form').click(function () {
             //
             $.ajax({
-                      url: "/sendForm.html",
-                      type: 'post',
-                      data: $('#send-form').serialize()
-                  }).done(function(resp) {
-
+                url: "/sendForm.html",
+                type: 'post',
+                data: $('#send-form').serialize()
+            }).done(function (resp) {
+                    $('#send-form').get(0).reset();
+                    alert('{{Lang::get('label.send')}}');
                 });
 
         })

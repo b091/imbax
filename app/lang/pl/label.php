@@ -12,4 +12,5 @@ return array(
     'buckets' => 'Łyżki do koparek',
     'next' => 'Następne',
     'previous' => 'Poprzednie',
+    'send' => 'Wiadomość została wysłana'
 );

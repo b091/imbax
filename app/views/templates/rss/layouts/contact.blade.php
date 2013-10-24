@@ -20,8 +20,6 @@
     <br/>
 
     <div class="col-md-6">
-        <img src="/{{$templateDir}}/images/rss_logo.png" alt="..." class="img-responsive">
-        <br/>
         {{$content}}
        </div>
     <br/>

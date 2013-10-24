@@ -6,8 +6,6 @@
 
     .asd {
         border-radius: 4px 4px 4px 4px;
-        /*border-width: 1px;*/
-        /*box-shadow: none;*/
         border: 1px solid #DDDDDD;
         border-top: none;
     }
@@ -20,7 +18,6 @@
         background-color: #33383D;
         color: #ffffff;
     }
-
 
 </style>
 

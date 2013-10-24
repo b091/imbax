@@ -21,7 +21,7 @@ class HomeController extends BaseController
 
         if(!empty($productsPage->id))
         {
-            $homepageProducts = Product::whereRaw('specjal = ? AND menu_id = ?', array(true, $productsPage->id))->get();
+            $homepageProducts = Product::whereRaw('specjal = ? AND menu_id = ? and disabled = ?', array(true, $productsPage->id, false))->get();
         }
 
         $menu = Menu::whereRaw('lang = ?', array($lang))->get();
@@ -32,7 +32,7 @@ class HomeController extends BaseController
             ->with('currentpage', $currentpage)
             ->with('content', $currentpage->content)
             ->with('templateDir', 'templates/rss')
-            ->with('product', Product::where('menu_id', '=', $currentpage->id)->get())
+            ->with('product', Product::whereRaw('menu_id = ? AND disabled = ?', array($currentpage->id, false))->get())
             ->with('homepageproduct', $homepageProducts) //@todo i po langu np
             ->with('productspagelink', $productsPage->pagelink)
             ->with('langs', Langs::all())

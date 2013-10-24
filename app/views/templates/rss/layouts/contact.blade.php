@@ -26,7 +26,7 @@
     <br/>
 
     <div class="col-md-6 rss-shadowpanel">
-        <h3>{{Lang::get('label.contactus')}}!</h3>
+        <h3>{{Lang::get('label.contactus')}}</h3>
         <br/>
         <br/>
 

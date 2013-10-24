@@ -51,8 +51,6 @@
             <br/>
             {{$item->description}}
             <br/><br/><br/>
-            <br/><br/><br/>
-            <br/><br/><br/>
         </div>
         @endforeach
 

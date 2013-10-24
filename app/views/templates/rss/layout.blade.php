@@ -82,16 +82,23 @@
 
 
     <style type="text/css">
+        .carousel-indicators {
+            margin-top:2px;
+        }
         .carousel-indicators li {
             background: url('/templates/rss/images/indicator.jpg') no-repeat;
             cursor: pointer;
             text-align: center;
             border: none;
+            width: 15px;
+            height: 15px;
         }
 
         .carousel-indicators .active {
             background: url('/templates/rss/images/indicator-active.jpg') no-repeat;
             margin: 0;
+            width: 16px;
+            height: 16px;
         }
 
     </style>

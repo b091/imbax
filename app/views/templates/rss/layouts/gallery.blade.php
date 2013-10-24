@@ -38,11 +38,17 @@
 @section('content')
 <br/>
 <div id="links" class="row">
-    @foreach($gallery as $image)
-    <div class="col-sm-6 col-md-3">
-    <a href="/files/gallery/{{$image->photo}}" title="{{$image->name}}" class="thumbnail" data-gallery>
-        <img src="/files/gallery/{{$image->photo}}" alt="{{$image->name}}" width="120px" height="120px" />
-    </a>
+    @foreach($gallery as $key => $image)
+
+    <div class="col-sm-6 col-md-3" style="margin-top: 10px;">
+        <div class="thumbnail">
+            <a href="/files/gallery/{{$image->photo}}" title="{{$image->name}}" data-gallery>
+                <img src="/files/gallery/{{$image->photo}}" alt="{{$image->name}}" width="253px" class="img-responsive"/>
+                <div class="caption">
+                    {{$image->name}}
+                </div>
+            </a>
+        </div>
     </div>
     @endforeach
 </div>

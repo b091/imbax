@@ -21,9 +21,8 @@
                 </div>
                 @endforeach
 
-                <div class="">
+                <div class="center">
                     <button type="submit" class="btn btn-primary">Zapisz</button>
-                    <button type="reset" class="btn">Anuluj</button>
                 </div>
             </form>
 
@@ -61,9 +60,8 @@
                 </div>
                 @endforeach
 
-                <div class="">
+                <div class="center">
                     <button type="submit" class="btn btn-primary">Zapisz</button>
-                    <button type="reset" class="btn">Anuluj</button>
                 </div>
             </form>
 

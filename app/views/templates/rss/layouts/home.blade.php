@@ -11,7 +11,8 @@
             <br/><br/><br/>
         </div>
         @foreach($homepageproduct as $item)
-        <div class="thumbnail2 hidden-xs">
+        <a href="/{{$currentlang}}/{{$productspagelink}}#product{{$item->id}}" class="hidden-xs">
+        <div class="thumbnail2">
             <img src="/files/products/{{$item->photo}}" alt="{{$item->name}}" class="pull-left img-responsive" width="84px"/>
 
             <div class="pull-left">
@@ -20,17 +21,15 @@
                 <p>&nbsp;&nbsp;&nbsp; {{$item->short_description}}</p>
             </div>
             <br/>
-            <a href="/{{$currentlang}}/{{$productspagelink}}#product{{$item->id}}" class="btn btn-sm btn-primary pull-right">{{Lang::get('buttons.check-offer')}} </a>
+<!--            <a href="/{{$currentlang}}/{{$productspagelink}}#product{{$item->id}}" class="btn btn-sm btn-primary pull-right">{{Lang::get('buttons.check-offer')}} </a>-->
         </div>
-
-        <a href="#">
-            <div class="thumbnail2 hidden-sm hidden-md hidden-lg">
-                <img src="/{{$templateDir}}/images/rss_A.jpg" alt="..." class="pull-left img-responsive"/>
+        </a>
+        <a href="/{{$currentlang}}/{{$productspagelink}}#product{{$item->id}}" class="hidden-sm hidden-md hidden-lg">
+            <div class="thumbnail2">
+                <img src="/files/products/{{$item->photo}}" alt="..." class="pull-left img-responsive" width="84px"/>
 
                 <div class="col-xs-8 col-sm-9">
                     <h4>{{$item->name}}</h4>
-
-                    <p>&nbsp;&nbsp;&nbsp;{{$item->short_description}}</p>
                 </div>
             </div>
         </a>

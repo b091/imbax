@@ -84,3 +84,10 @@ Route::get(
            get_magic_quotes_gpc());
     }
 );
+
+
+App::missing(function($exception)
+{
+//    return Response::view('templates.rss.layouts.missing', array(), 404);
+        return Redirect::to('/');
+});

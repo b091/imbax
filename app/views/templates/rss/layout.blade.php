@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{$pageTitle}}</title>
-    <meta name="description" content="{{$pageDescription}}">
-    <meta name="Keywords" content="{{$pageKeywords}}">
+    <title>{{@$pageTitle}}</title>
+    <meta name="description" content="{{@$pageDescription}}">
+    <meta name="Keywords" content="{{@$pageKeywords}}">
 
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/famfamfam_flags/famfamfam-flags.css" rel="stylesheet">
@@ -37,11 +37,11 @@
         </div>
         <div class="col-md-9 col-xs-6 col-sm-9 hidden-sm hidden-xs">
             <div class="pull-right topbar-text-rss"><span class="glyphicon glyphicon-earphone"></span><span> {{Lang::get('label.customer-service')}} :</span><span
-                    style="color: #fff;"> {{$pagePhone}}</span>
+                    style="color: #fff;"> {{@$pagePhone}}</span>
             </div>
         </div>
         <div class="col-md-9 col-xs-6 col-sm-9 hidden-md hidden-lg">
-            <div class="pull-right topbar-text-rss"><span class="glyphicon glyphicon-earphone"></span><span style="color: #fff;"> {{$pagePhone}}</span>
+            <div class="pull-right topbar-text-rss"><span class="glyphicon glyphicon-earphone"></span><span style="color: #fff;"> {{@$pagePhone}}</span>
             </div>
         </div>
     </div>

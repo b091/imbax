@@ -5,13 +5,16 @@ class HomeController extends BaseController
 
 //    protected $layout = 'base';
 
-    public function index($lang = 'pl', $pagelink = null)
+    public function index($lang = null, $pagelink = null)
     {
+        if(empty($lang))
+        {
+            $lang =  Langs::where('default', '=', true)->firstOrFail()->code;
+        }
 
         App::setLocale($lang);
 
         if ($pagelink === null) {
-            //$pagelink = Menu::whereRaw('mainpage = ? AND lang = ?', array(true, $lang))->firstOrFail()->pagelink;
             $pagelink = Menu::whereRaw('layout = ? AND lang = ?', array('home', $lang))->firstOrFail()->pagelink;
         }
 
@@ -35,7 +38,7 @@ class HomeController extends BaseController
             ->with('product', Product::whereRaw('menu_id = ? AND disabled = ?', array($currentpage->id, false))->get())
             ->with('homepageproduct', $homepageProducts) //@todo i po langu np
             ->with('productspagelink', $productsPage->pagelink)
-            ->with('langs', Langs::all())
+            ->with('langs', Langs::where('disabled', '=', false)->get())
             ->with('gallery', Gallery::where('menu_id', '=', $currentpage->id)->get())
             ->with('pageTitle', Configuration::whereRaw('lang_code = ? AND name = ?', array($lang, 'title'))->firstOrFail()->value)
             ->with('pageDescription', Configuration::whereRaw('lang_code = ? AND name = ?', array($lang, 'description'))->firstOrFail()->value)

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{App::getLocale()}}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{$pageTitle}}</title>
     <meta name="description" content="{{$pageDescription}}">
     <meta name="Keywords" content="{{$pageKeywords}}">
 
@@ -10,7 +11,6 @@
     <link href="/assets/famfamfam_flags/famfamfam-flags.css" rel="stylesheet">
     <link rel="shortcut icon" href="/{{$templateDir}}/ico/favicon.png">
 
-    <title>{{$pageTitle}}</title>
     @stylesheets('bootstrap')
     @javascripts('bootstrap-js')
     <!-- Custom styles for this template -->

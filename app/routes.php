@@ -28,6 +28,7 @@ Route::post('/admin/{lang}/productsoptions/update.html', 'ProductsOptionsControl
 Route::post('/admin/{lang}/product/update.html', 'ProductController@update')->where($langpartofurl);
 
 Route::post('/admin/{lang}/configuration/update.html', 'ConfigurationController@update')->where($langpartofurl);
+Route::post('/admin/{lang}/lang/update.html', 'LangController@update')->where($langpartofurl);
 
 Route::get('/admin/{lang}/{page?}', 'AdminController@index')->where(array('lang' => '[a-z]{2}', 'page' => '(.*\.html)'));
 Route::post('/admin/{lang}/{page?}', 'AdminController@index')->where(array('lang' => '[a-z]{2}', 'page' => '(.*\.html)'));

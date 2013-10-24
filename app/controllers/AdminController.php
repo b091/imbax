@@ -49,7 +49,9 @@ class AdminController extends Controller
 
     public function configuration()
     {
-        return View::make('admin.modules.configuration')->with('configurationform', Configuration::whereRaw('lang_code = ?', array(App::getLocale()))->get() );
+        return View::make('admin.modules.configuration')
+            ->with('configurationform', Configuration::whereRaw('lang_code = ?', array(App::getLocale()))->get() )
+            ->with('langform', Langs::all());
     }
 
     /**

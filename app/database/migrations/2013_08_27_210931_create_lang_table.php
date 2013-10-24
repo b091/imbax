@@ -17,6 +17,8 @@ class CreateLangTable extends Migration {
             $table->string('code')->index();
             $table->string('name');
             $table->boolean('default')->default(false);
+            $table->boolean('disabled')->default(false);
+            $table->timestamps();
 		});
 	}
 

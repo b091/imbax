@@ -11,16 +11,22 @@ class LangTableSeeder extends Seeder
                 'code' => 'pl',
                 'name' => 'Polski',
                 'default' => true,
+                'created_at' => date('Y-m-d'),
+                'updated_at' => date('Y-m-d'),
             ),
             array(
                 'code' => 'gb',
                 'name' => 'English',
                 'default' => false,
+                'created_at' => date('Y-m-d'),
+                'updated_at' => date('Y-m-d'),
             ),
             array(
                 'code' => 'se',
                 'name' => 'Sverige',
                 'default' => false,
+                'created_at' => date('Y-m-d'),
+                'updated_at' => date('Y-m-d'),
             )
         );
 

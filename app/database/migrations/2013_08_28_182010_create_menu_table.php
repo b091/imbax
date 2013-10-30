@@ -16,7 +16,7 @@ class CreateMenuTable extends Migration {
 		{
 			$table->increments('id');
             $table->integer('parent_id')->nullable();
-            $table->enum('layout', array('contact', 'home', 'content', 'products', 'gallery'));
+            $table->enum('layout', array('contact', 'home', 'content', 'products','product', 'gallery'));
             $table->string('title', 100);
             $table->text('content') ;
             $table->string('pagelink');

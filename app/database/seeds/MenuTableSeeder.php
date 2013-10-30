@@ -7,8 +7,8 @@ class MenuTableSeeder extends Seeder
     {
         $items = array(
             array(
-                'title' => 'Oferta',
-                'pagelink' => 'oferta.html',
+                'title' => 'Główna',
+                'pagelink' => 'home.html',
                 'lang' => 'pl',
                 'layout' => 'home',
                 'mainpage' => 1,
@@ -32,28 +32,38 @@ class MenuTableSeeder extends Seeder
                     </p>
                     <a class="btn btn-sm btn-info" href="#">Czytaj więcej</a>
                 ',
-                'created_at' =>  date('Y-m-d'),
-                'updated_at' =>  date('Y-m-d'),
+                'created_at' => date('Y-m-d'),
+                'updated_at' => date('Y-m-d'),
             ),
             array(
-                'title' => 'Produkty',
+                'title' => 'Oferty',
                 'pagelink' => 'produkty.html',
                 'lang' => 'pl',
                 'layout' => 'products',
                 'mainpage' => 0,
                 'content' => '<h3>Produkty</h3>',
-                'created_at' =>  date('Y-m-d'),
-                'updated_at' =>  date('Y-m-d'),
+                'created_at' => date('Y-m-d'),
+                'updated_at' => date('Y-m-d'),
             ),
             array(
-                'title' => 'Galeria',
+                'title' => 'Lista Ofert',
                 'pagelink' => 'galeria.html',
                 'lang' => 'pl',
                 'layout' => 'gallery',
                 'mainpage' => 0,
                 'content' => '<h3>Galeria</h3>',
-                'created_at' =>  date('Y-m-d'),
-                'updated_at' =>  date('Y-m-d'),
+                'created_at' => date('Y-m-d'),
+                'updated_at' => date('Y-m-d'),
+            ),
+            array(
+                'title' => 'Oferta',
+                'pagelink' => 'oferta.html',
+                'lang' => 'pl',
+                'layout' => 'product',
+                'mainpage' => 0,
+                'content' => '<h3>Ofetra</h3>',
+                'created_at' => date('Y-m-d'),
+                'updated_at' => date('Y-m-d'),
             ),
             array(
                 'title' => 'Kontakt',
@@ -79,8 +89,8 @@ class MenuTableSeeder extends Seeder
                         <iframe width="570" height="230" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
                                 src="https://www.google.pl/maps?t=m&amp;q=4112+La+Cienega+Blvd,+Los+Angeles,+CA+90056,+Stany+Zjednoczone&amp;ie=UTF8&amp;hq=&amp;hnear=4112+La+Cienega+Blvd,+Los+Angeles,+California+90056,+Stany+Zjednoczone&amp;ll=34.012048,-118.373152&amp;spn=0.2358,0.445976&amp;z=12&amp;output=embed"></iframe>
                 ',
-                'created_at' =>  date('Y-m-d'),
-                'updated_at' =>  date('Y-m-d'),
+                'created_at' => date('Y-m-d'),
+                'updated_at' => date('Y-m-d'),
             ),
             array(
                 'title' => 'Offer',
@@ -108,8 +118,8 @@ class MenuTableSeeder extends Seeder
                                </p>
                                <a class="btn btn-sm btn-info" href="#">{{Lang::get(\'buttons.readmore\')}}</a>
                            ',
-                'created_at' =>  date('Y-m-d'),
-                'updated_at' =>  date('Y-m-d'),
+                'created_at' => date('Y-m-d'),
+                'updated_at' => date('Y-m-d'),
             ),
             array(
                 'title' => 'Våra produkter',
@@ -137,8 +147,8 @@ class MenuTableSeeder extends Seeder
                                </p>
                                <a class="btn btn-sm btn-info" href="#">{{Lang::get(\'buttons.readmore\')}}</a>
                            ',
-                'created_at' =>  date('Y-m-d'),
-                'updated_at' =>  date('Y-m-d'),
+                'created_at' => date('Y-m-d'),
+                'updated_at' => date('Y-m-d'),
             ),
         );
 

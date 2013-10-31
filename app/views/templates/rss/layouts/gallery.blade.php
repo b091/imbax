@@ -1,5 +1,6 @@
 @extends('templates.rss.layout')
 
+@section('content')
 <div id="blueimp-gallery" class="blueimp-gallery" >
     <div class="slides"></div>
     <h3 class="title"></h3>
@@ -31,7 +32,6 @@
     </div>
 </div>
 
-@section('content')
 <br/>
 
 <div id="showcase">

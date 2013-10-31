@@ -21,16 +21,12 @@
 
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,700,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="/{{$templateDir}}/css/rss.css"/>
-
-    <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
-    <script src="/packages/gallery/js/bootstrap-image-gallery.js"></script>
 </head>
 
 <body>
 <div class="row topbar-rss">
     <div class="container">
         <div class="col-xs-6 col-sm-3 topbar-text-rss">
-            {{Lang::get('label.choose-language')}}:
             @foreach($langs as $item)
             <a href="/{{$item->code}}/"><i class="famfamfam-flag-{{$item->code}}"></i></a>
             @endforeach
@@ -108,6 +104,12 @@
     });
 
 </script>
+
+
+<script src="/packages/gallery/js/jquery.blueimp-gallery.min.js"></script>
+<script src="/packages/gallery/js/bootstrap-image-gallery.js"></script>
+<link rel="stylesheet" href="/packages/blueimp/Gallery/css/blueimp-gallery.min.css">
+<link rel="stylesheet" href="/packages/gallery/css/bootstrap-image-gallery.min.css">
 
 </body>
 </html>

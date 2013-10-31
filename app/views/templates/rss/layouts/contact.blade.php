@@ -10,18 +10,18 @@
     </div>
     <br/>
     <br/>
-
+    <p style="text-align: justify;">{{Lang::get('label.contactus')}}</p>
     <div class="col-md-6 rss-shadowpanel">
-        <h3>{{Lang::get('label.contactus')}}</h3>
+
         <br/>
         <br/>
 
         <form id="send-form">
             <div class="form-group">
-                <input type="text" class="form-control input-lg" name="name" placeholder="{{Lang::get('label.name')}}"/>
+                <input type="text" class="form-control input-lg" name="subject" placeholder="{{Lang::get('label.subject')}}"/>
             </div>
             <div class="form-group">
-                <input type="text" class="form-control input-lg" name="surname" placeholder="{{Lang::get('label.surname')}}"/>
+                <input type="text" class="form-control input-lg" name="name" placeholder="{{Lang::get('label.name')}}"/>
             </div>
             <div class="form-group">
                 <input type="email" class="form-control input-lg" name="email" placeholder="{{Lang::get('label.email')}}"/>
@@ -41,14 +41,33 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $('#btn-send-form').click(function () {
+        $('#btn-send-form').click(function()
+        {
             $.ajax({
                 url: "/sendForm.html",
                 type: 'post',
+                success: function(resp)
+                {
+                    var response = JSON.parse(resp);
+
+                    $.each($("#send-form div"), function(key, item){
+                        $(item).removeClass('has-error');
+                    });
+
+                    if($.isEmptyObject(response) == false)
+                    {
+                        $.each(response, function(key, value){
+                            console.log(key, value);
+                           $("#send-form :input[name='" + key + "']").parent().addClass('has-error');
+                        });
+                    }
+                    else
+                    {
+                        $('#send-form').get(0).reset();
+                        alert('{{Lang::get('label.send')}}');
+                    }
+                },
                 data: $('#send-form').serialize()
-            }).done(function (resp) {
-                $('#send-form').get(0).reset();
-                alert('{{Lang::get('label.send')}}');
             });
         })
     });

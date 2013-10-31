@@ -3,6 +3,7 @@
 return array(
 
     'name' => 'Imię',
+    'subject' => 'Temat',
     'surname' => 'Nazwisko',
     'email' => 'Adres e-mail',
     'message' => 'Wiadomość',

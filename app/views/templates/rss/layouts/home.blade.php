@@ -13,7 +13,7 @@
         @foreach($homepageproduct as $item)
         <a href="/{{$currentlang}}/{{$productspagelink}}#product{{$item->id}}" class="hidden-xs">
         <div class="thumbnail2">
-            <img src="<?=Croppa::url("/files/products/{$item->photo}", 84, 64)?>" alt="{{$item->name}}" class="pull-left img-responsive" width="84px"/>
+            <img src="<?=Croppa::url("/files/products/{$item->photo}", 84, 64)?>" alt="{{$item->name}}" class="pull-left img-responsive"/>
 
             <div class="pull-left">
                 <h4>&nbsp;&nbsp; {{$item->name}}</h4>
@@ -26,7 +26,7 @@
         </a>
         <a href="/{{$currentlang}}/{{$productspagelink}}#product{{$item->id}}" class="hidden-sm hidden-md hidden-lg">
             <div class="thumbnail2">
-                <img src="<?=Croppa::url("/files/products/{$item->photo}", 84, 64)?>" alt="..." class="pull-left img-responsive" width="84px"/>
+                <img src="<?=Croppa::url("/files/products/{$item->photo}", 84, 64)?>" alt="..." class="pull-left img-responsive"/>
 
                 <div class="col-xs-8 col-sm-9">
                     <h4>{{$item->name}}</h4>

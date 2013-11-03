@@ -7,20 +7,21 @@
     <meta name="description" content="{{@$pageDescription}}">
     <meta name="Keywords" content="{{@$pageKeywords}}">
 
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/famfamfam_flags/famfamfam-flags.css" rel="stylesheet">
-    <link rel="shortcut icon" href="/{{$templateDir}}/ico/favicon.png">
+    <link rel="shortcut icon" href="/{{$templateDir}}/images/favicon.ico">
 
-    @stylesheets('bootstrap')
-    @javascripts('bootstrap-js')
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/famfamfam_flags/famfamfam-flags.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,700,300">
+    <link rel="stylesheet" type="text/css" href="/{{$templateDir}}/css/rss.css"/>
+    <link rel="stylesheet" type="text/css" href="/packages/blueimp/Gallery/css/blueimp-gallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/packages/gallery/css/bootstrap-image-gallery.min.css">
+
     <!-- Custom styles for this template -->
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     @javascripts('bootstrap-ie')
     <![endif]-->
 
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,700,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="/{{$templateDir}}/css/rss.css"/>
 </head>
 
 <body>
@@ -55,6 +56,8 @@
 </div>
 
 @include('templates.rss.footer')
+
+@javascripts('bootstrap-js')
 
 <script type="text/javascript">
 
@@ -105,11 +108,8 @@
 
 </script>
 
-
 <script src="/packages/gallery/js/jquery.blueimp-gallery.min.js"></script>
-<script src="/packages/gallery/js/bootstrap-image-gallery.js"></script>
-<link rel="stylesheet" href="/packages/blueimp/Gallery/css/blueimp-gallery.min.css">
-<link rel="stylesheet" href="/packages/gallery/css/bootstrap-image-gallery.min.css">
+<script src="/packages/gallery/js/bootstrap-image-gallery.min.js"></script>
 
 </body>
 </html>

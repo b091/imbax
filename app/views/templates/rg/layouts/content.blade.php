@@ -1,4 +1,4 @@
-@extends('templates.npg.layout')
+@extends('templates.rg.layout')
 
 @section('content')
 

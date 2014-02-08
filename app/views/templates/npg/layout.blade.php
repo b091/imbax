@@ -1,113 +1,160 @@
 <!DOCTYPE html>
-<html lang="{{App::getLocale()}}">
+<html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{@$pageTitle}}</title>
-    <meta name="description" content="{{@$pageDescription}}">
-    <meta name="Keywords" content="{{@$pageKeywords}}">
+	<title>JODŁOWSKI NPG</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/famfamfam_flags/famfamfam-flags.css" rel="stylesheet">
-    <link rel="shortcut icon" href="/{{$templateDir}}/ico/favicon.png">
+    <!-- Styles -->
+    <link href="/templates/npg/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/templates/npg/css/compiled/bootstrap-overrides.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/templates/npg/css/compiled/theme.css" />
 
-    @stylesheets('bootstrap')
-    @javascripts('bootstrap-js')
-    <!-- Custom styles for this template -->
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css' />
+
+    <link rel="stylesheet" href="/templates/npg/css/compiled/index.css" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/templates/npg/css/lib/animate.css" media="screen, projection" />
+
     <!--[if lt IE 9]>
-    @javascripts('bootstrap-ie')
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,700,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="/{{$templateDir}}/css/rss.css"/>
+    <link rel="stylesheet" href="/templates/npg/css/compiled/contact.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/templates/npg/css/compiled/blog.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/templates/npg/css/compiled/portfolio-item.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/templates/npg/css/compiled/blogpost.css" type="text/css" media="screen" />
 
-    <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
-    <script src="/packages/gallery/js/bootstrap-image-gallery.js"></script>
+
+
 </head>
-
-<body>
-<div class="row topbar-rss">
+<body class="pull_top">
+@if ($currentpage->layout == 'home')
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
-        <div class="col-xs-6 col-sm-3 topbar-text-rss">
-            {{Lang::get('label.choose-language')}}:
-            @foreach($langs as $item)
-            <a href="/{{$item->code}}/"><i class="famfamfam-flag-{{$item->code}}"></i></a>
-            @endforeach
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle pull-right" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand"><strong>JODŁOWSKI NPG</strong></a>
         </div>
-        <div class="col-md-9 col-xs-6 col-sm-9 hidden-sm hidden-xs">
-            <div class="pull-right topbar-text-rss"><span class="glyphicon glyphicon-earphone"></span><span> {{Lang::get('label.customer-service')}} :</span><span
-                    style="color: #fff;"> {{@$pagePhone}}</span>
-            </div>
-        </div>
-        <div class="col-md-9 col-xs-6 col-sm-9 hidden-md hidden-lg">
-            <div class="pull-right topbar-text-rss"><span class="glyphicon glyphicon-earphone"></span><span style="color: #fff;"> {{@$pagePhone}}</span>
-            </div>
+
+        <div class="collapse navbar-collapse navbar-ex1-collapse" role="navigation">
+            <ul class="nav navbar-nav navbar-right">
+                @foreach($menu as $item)
+                <li class="@if ($currentpage->pagelink === $item->pagelink ) active @endif"><a href="/{{$currentlang}}/{{ $item->pagelink }}">{{strtoupper($item->title)}}</a></li>
+                @endforeach
+            </ul>
         </div>
     </div>
 </div>
+@else
+<div class="navbar navbar-inverse navbar-static-top" role="navigation">
+       <div class="container">
+           <div class="navbar-header">
+               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                   <span class="sr-only">Toggle navigation</span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+                   <span class="icon-bar"></span>
+               </button>
+               <a href="/" class="navbar-brand"><strong>JODŁOWSKI NPG</strong></a>
+           </div>
 
-@include('templates.rss.menu')
-@yield('topmenu')
-@include('templates.rss.topbanner')
+           <div class="collapse navbar-collapse navbar-ex1-collapse" role="navigation">
+               <ul class="nav navbar-nav navbar-right">
+                   @foreach($menu as $item)
+                <li class="@if ($currentpage->pagelink === $item->pagelink ) active @endif"><a href="/{{$currentlang}}/{{ $item->pagelink }}">{{strtoupper($item->title)}}</a></li>
+                @endforeach
+               </ul>
+           </div>
+       </div>
+   </div>
+@endif
 
-<div class="col-md-12" style="background-color: #ffffff;">
-    <div class="container">
-        @yield('content')
-        <br/>
-    </div>
-</div>
+    @yield('content')
 
-@include('templates.rss.footer')
+    <!-- starts footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="row sections">
+                <div class="col-sm-4 recent_posts">
+                    <h3 class="footer_header">
+                        Polecamy
+                    </h3>
+                    <div class="post">
+                        <a href="blogpost.html">
+                            <img src="/templates/npg/img/recent_post1.png" class="img-circle" />
+                        </a>
+                        <div class="date">
+                            Sopot 80 m&sup2;
+                        </div>
+                        <a href="blogpost.html" class="title">
+                            Randomised words which don't look embarrasing hidden.
+                        </a>
+                    </div>
+                    <div class="post">
+                        <a href="blogpost.html">
+                            <img src="/templates/npg/img/recent_post2.png" class="img-circle" />
+                        </a>
+                        <div class="date">
+                            Gdańsk 56 m&sup2;
+                        </div>
+                        <a href="blogpost.html" class="title">
+                            Randomised words which don't look embarrasing hidden.
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-4 testimonials">
+                    <h3 class="footer_header">
+                        Motto
+                    </h3>
+                    <div class="wrapper">
+                        <div class="quote">
+                            <span>“</span>
+                            Z nami twoja satysfakcja
+                            <span></span>
+                        </div>
+                        <div class="author">
+                            <img src="/templates/npg/img/user-display.png" />
+                            <div class="name">Anna Maria Kowalska</div>
+                            <div class="info">
+                                Agent Nieruchomści
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 contact">
+                    <h3 class="footer_header">
+                        Kontakt
+                    </h3>
+                    <form action="index.html#" method="post">
+                        <input type="text" placeholder="Twoje imię" />
+                        <input type="text" placeholder="Twój email" />
+                        <textarea rows="3" placeholder="Wiadomość"></textarea>
+                        <input type="submit" value="Wyślij" />
+                    </form>
+                </div>
+            </div>
+            <div class="row credits">
+                <div class="col-md-12">
+                    <div class="row copyright">
+                        <div class="col-md-12">
+                            © 2013 Jodłowski Nieruchomości Pomorza Gdańskiego
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-<script type="text/javascript">
+    <!-- Scripts -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="/templates/npg/js/bootstrap.min.js"></script>
+    <script src="/templates/npg/js/theme.js"></script>
 
-    $(document).ready(function () {
-
-        var $window = $(window),
-            $body = $(document.body),
-            navHeight = $('.navbar').outerHeight(true) + 10;
-
-        $body.scrollspy({
-            target: '.bs-sidebar',
-            offset: navHeight
-        })
-
-        $window.on('load', function () {
-            $body.scrollspy('refresh')
-        })
-
-        $('.bs-docs-container [href=#]').click(function (e) {
-            e.preventDefault()
-        })
-
-
-        setTimeout(function () {
-            var $sideBar = $('.bs-sidebar')
-
-            $sideBar.affix({
-                offset: {
-                    top: function () {
-                        var offsetTop = $sideBar.offset().top
-                        var sideBarMargin = parseInt($sideBar.children(0).css('margin-top'), 10)
-                        var navOuterHeight = $('.bs-docs-nav').height()
-
-                        return (this.top = offsetTop - navOuterHeight - sideBarMargin)
-                    }, bottom: function () {
-                        return (this.bottom = $('.bs-footer').outerHeight(true))
-                    }
-                }
-            })
-        }, 100)
-
-        setTimeout(function () {
-            $('.bs-top').affix()
-        }, 100);
-
-        $('#carousel-rss').carousel();
-    });
-
-</script>
-
+    <script type="text/javascript" src="/templates/npg/js/index-slider.js"></script>
 </body>
 </html>

@@ -114,7 +114,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
         'Basset\BassetServiceProvider',
-        'Barryvdh\ElfinderBundle\ElfinderBundleServiceProvider',
+        'Barryvdh\Elfinder\ElfinderServiceProvider',
         'Bkwld\Croppa\ServiceProvider',
 
 	),

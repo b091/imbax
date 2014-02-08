@@ -38,15 +38,15 @@ Route::post(
     '/sendForm.html',
     function () {
 
-        $rules = array(
-            'subject' => 'required',
-            'mailmessage' => 'required',
-            'name' => 'required',
-            //'surname' => 'required',
-            'email' => 'required|email'
+        $validator = Validator::make(
+            Input::all(),
+            array(
+                'subject' => 'required',
+                'mailmessage' => 'required',
+                'name' => 'required',
+                'email' => 'required|email'
+            )
         );
-
-        $validator = Validator::make(Input::all(), $rules);
 
         if ($validator->fails())
         {

@@ -2,6 +2,7 @@
 
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class Gallery extends Eloquent
 {
@@ -14,16 +15,19 @@ class Gallery extends Eloquent
     protected $table = 'gallery';
 
     /**
+     * Nazwa/opis grafiki
      * @var string
      */
     private $name;
 
     /**
+     * Nazwa pliku
      * @var string
      */
     private $photo;
 
     /**
+     * Element menu w ktorym istnieje galeria
      * @var integer
      */
     private $menu_id;
@@ -49,12 +53,15 @@ class Gallery extends Eloquent
     }
 
     /**
+     * Ustawia nazwe pliku i przenosi go z tmp do odpowiedniego katalogu
      * @param string $photo
+     * @param \Symfony\Component\HttpFoundation\File\UploadedFile $file
      * @return $this
      */
-    public function setPhoto($photo)
+    public function setPhoto($photo, UploadedFile $file)
     {
         $this->photo = $photo;
+        $file->move('files' . DIRECTORY_SEPARATOR . 'gallery', $this->photo);
         return $this;
     }
 

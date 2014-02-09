@@ -16,12 +16,9 @@ class GalleryController extends Controller
         $image = new Gallery();
 
         $image->setName($title)
-              ->setPhoto($filename)
-              ->setMenuId(Input::get('menu'));
-
-        $file->move('files' . DIRECTORY_SEPARATOR . 'gallery', $filename);
-
-        $image->save();
+              ->setPhoto($filename, $file)
+              ->setMenuId(Input::get('menu'))
+              ->save();
 
         return Redirect::to($_SERVER['HTTP_REFERER']);
 
@@ -34,10 +31,8 @@ class GalleryController extends Controller
     public function remove()
     {
        $id = Input::get('id');
-       $filename = Gallery::find($id)->photo;
+       unlink('files' . DIRECTORY_SEPARATOR . 'gallery' . DIRECTORY_SEPARATOR . Gallery::find($id)->photo);
        Gallery::destroy($id);
-       unlink('files' . DIRECTORY_SEPARATOR . 'gallery' . DIRECTORY_SEPARATOR . $filename);
-       //@todo usuwanie pliku
        return '{success:true}';
     }
 

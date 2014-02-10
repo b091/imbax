@@ -14,6 +14,12 @@
         </noscript>
 
         <div id="content" class="span10">
+            <? $errors = Session::get('errors'); ?>
+            @if($errors->has())
+               @foreach ($errors->all() as $error)
+                  <div class="alert alert-error">{{ $error }}</div>
+              @endforeach
+            @endif
             @yield('content')
         </div>
     </div>

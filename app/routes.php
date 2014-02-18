@@ -1,6 +1,8 @@
 <?php
 $langpartofurl = array('lang' => '[a-z]{2}');
 
+//App::setLocale('pl');
+
 Route::get('/{lang}/{page?}', 'HomeController@index')
     ->where(array('lang' => '[a-z]{2}', 'page' => '(.*\.html)'));
 
@@ -12,7 +14,16 @@ Route::post('/admin/{lang}/productsoptions/get.html', 'ProductsOptionsController
 Route::post('/admin/{lang}/product/get.html', 'ProductController@get')->where($langpartofurl);
 
 Route::post('/admin/{lang}/gallery/add.html', 'GalleryController@add')->where($langpartofurl);
-Route::post('/admin/{lang}/menu/add.html', 'MenuController@add')->where($langpartofurl);
+//Route::post('/admin/{lang}/menu/add.html', 'MenuController@add')->where($langpartofurl);
+//Route::controller('/admin/{lang}/menu', 'MenuController');
+
+
+Route::group(array('prefix' => 'api/v1', 'before' => 'auth.basic'), function()
+{
+    Route::resource('menu', 'Api\MenuController');
+});
+
+
 Route::post('/admin/{lang}/productsoptions/add.html', 'ProductsOptionsController@add')->where($langpartofurl);
 Route::post('/admin/{lang}/product/add.html', 'ProductController@add')->where($langpartofurl);
 
@@ -53,14 +64,14 @@ Route::post(
             return $validator->messages()->toJson();
         }
 
-        $to      = Configuration::whereRaw('name = ? AND lang_code = ?', array('mail', 'pl'))->firstOrFail()->value;
-        $subject = 'RSS - ' . Input::get('subject');
-        $message = Input::get('mailmessage');
-        $headers = 'From: website@realsteelsweden.com' . "\r\n" .
-            'Reply-To: ' . Input::get('name')  . '<' . Input::get('email') . '>' . "\r\n" .
-            'X-Mailer: PHP/' . phpversion();
-
-        mail($to, $subject, $message, $headers);
+        mail(
+            Configuration::whereRaw('name = ? AND lang_code = ?', array('mail', 'pl'))->firstOrFail()->value,
+            'RSS - ' . Input::get('subject'),
+            Input::get('mailmessage'),
+            'From: website@realsteelsweden.com' . "\r\n" .
+                'Reply-To: ' . Input::get('name')  . '<' . Input::get('email') . '>' . "\r\n" .
+                'X-Mailer: PHP/' . phpversion()
+        );
 
         return '';
     }

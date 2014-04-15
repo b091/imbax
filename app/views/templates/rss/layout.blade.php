@@ -6,22 +6,13 @@
     <title>{{@$pageTitle}}</title>
     <meta name="description" content="{{@$pageDescription}}">
     <meta name="Keywords" content="{{@$pageKeywords}}">
-
     <link rel="shortcut icon" href="/{{$templateDir}}/images/favicon.ico">
-
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/assets/famfamfam_flags/famfamfam-flags.css">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,700,300">
     <link rel="stylesheet" type="text/css" href="/{{$templateDir}}/css/rss.css"/>
     <link rel="stylesheet" type="text/css" href="/packages/blueimp/Gallery/css/blueimp-gallery.min.css">
     <link rel="stylesheet" type="text/css" href="/packages/gallery/css/bootstrap-image-gallery.min.css">
-
-    <!-- Custom styles for this template -->
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    @javascripts('bootstrap-ie')
-    <![endif]-->
-
 </head>
 
 <body>

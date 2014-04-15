@@ -1,12 +1,9 @@
 {
-    "name": "laravel/laravel",
-    "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "name": "Imbax",
+    "description": "The IMBA Shit :]",
+    "keywords": ["imba", "laravel4", "angularjs"],
     "require": {
         "laravel/framework": "4.0.*",
-        "twitter/bootstrap": "dev-3.0.0-wip",
-        "jasonlewis/basset": "4.0.*@dev",
-        "cssmin/cssmin": "3.0.*",
         "barryvdh/elfinder-bundle": "dev-master",
         "bkwld/croppa": "~3.0"
     },
@@ -37,21 +34,5 @@
     "config": {
         "preferred-install": "dist"
     },
-    "minimum-stability": "dev",
-    "repositories": [
-        {
-            "type": "package",
-            "package": {
-                "name": "cssmin/cssmin",
-                "version": "3.0.1",
-                "dist": {
-                    "url": "http://cssmin.googlecode.com/files/cssmin-v3.0.1.php",
-                    "type": "file"
-                },
-                "autoload": {
-                    "classmap": [ "cssmin-v3.0.1.php" ]
-                }
-            }
-        }
-    ]
+    "minimum-stability": "dev"
 }

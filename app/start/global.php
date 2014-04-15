@@ -85,29 +85,3 @@ App::down(
 */
 
 require app_path() . '/filters.php';
-
-Basset::collection(
-    'bootstrap',
-    function ($collection) {
-        $collection->add('../public/assets/css/less/bootstrap-custom.less');
-    }
-)->apply('Less'); //->andApply('CssMin')
-
-
-Basset::collection(
-    'bootstrap-js',
-    function ($collection) {
-        $collection->add('../vendor/twitter/bootstrap/assets/js/holder.js');
-        $collection->add('../vendor/twitter/bootstrap/assets/js/jquery.js');
-        $collection->add('../vendor/twitter/bootstrap/dist/js/bootstrap.min.js');
-    }
-)->apply('JsMin'); //->andApply('CssMin')
-
-
-Basset::collection(
-    'bootstrap-ie',
-    function ($collection) {
-        $collection->add('../vendor/twitter/bootstrap/assets/js/respond.min.js'); //html5shiv.js
-        $collection->add('../vendor/twitter/bootstrap/assets/js/html5shiv.js');
-    }
-)->apply('JsMin');

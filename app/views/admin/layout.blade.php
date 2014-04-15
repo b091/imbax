@@ -1,26 +1,22 @@
-@extends('admin.template')
+<!DOCTYPE html>
+<html lang="en" ng-app="imbaxadm">
+<head>
+    <meta charset="utf-8">
+    <title>Laravel4 AngularJS</title>
+    <link href="/imbaxadm/css/app.css" rel="stylesheet" />
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
 
-@section('content54')
-    @include('admin.menu')
-    <div class="row-fluid">
-        @if (Auth::check())
-            @yield('leftmenu')
-        @endif
-        <noscript>
-            <div class="alert alert-block span10">
-                <h4 class="alert-heading">Warning!</h4>
-                <p>You need to have <a href="/http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
-            </div>
-        </noscript>
+    <script src="/imbaxadm/lib/angular/angular-route.js"></script>
+    <script src="/imbaxadm/lib/angular/angular-resource.js"></script>
+    <script src="/imbaxadm/lib/angular/angular-sanitize.js"></script>
 
-        <div id="content" class="span10">
-            <? $errors = Session::get('errors'); ?>
-            @if($errors->has())
-               @foreach ($errors->all() as $error)
-                  <div class="alert alert-error">{{ $error }}</div>
-              @endforeach
-            @endif
-            @yield('content')
-        </div>
-    </div>
-@stop
+    <script src="/imbaxadm/js/app.js"></script>
+    <script src="/imbaxadm/js/controller.js"></script>
+    <script src="/imbaxadm/js/services.js"></script>
+</head>
+<body>
+    <div class="container" ng-view></div>
+</body>
+</html>

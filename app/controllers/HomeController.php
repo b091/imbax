@@ -9,12 +9,10 @@ class HomeController extends BaseController
     {
         $langs = Langs::where('disabled', '=', false)->get();
 
-        if(empty($lang))
-        {
+        if ($lang === null) {
             $lang = Langs::whereRaw('code = ? AND disabled = ?', array(substr(Request::url(), -2), false))->pluck('code');
-            if(empty($lang))
-            {
-                $lang =  Langs::where('default', '=', true)->firstOrFail()->code;
+            if (empty($lang)) {
+                $lang = Langs::where('default', '=', true)->firstOrFail()->code;
             }
         }
 
@@ -28,8 +26,7 @@ class HomeController extends BaseController
         $productsPage = Menu::whereRaw('layout = ? AND lang = ?', array('products', $lang))->firstOrFail();
         $homepageProducts = array();
 
-        if(!empty($productsPage->id))
-        {
+        if (!empty($productsPage->id)) {
             $homepageProducts = Product::whereRaw('specjal = ? AND menu_id = ? and disabled = ?', array(true, $productsPage->id, false))->get();
         }
 

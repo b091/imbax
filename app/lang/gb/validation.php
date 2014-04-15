@@ -80,7 +80,13 @@ return array(
 	|
 	*/
 
-	'custom' => array(),
+	'custom' => array(
+        'title' => array(
+                'required' => 'We need to know your e-mail address!',
+            ),
+
+
+    ),
 
 	/*
 	|--------------------------------------------------------------------------

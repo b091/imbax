@@ -55,8 +55,8 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => '01223283_rss',
-			'username'  => '01223283_rss',
+			'database'  => 'imbax',
+			'username'  => 'root',
 			'password'  => 'futura25',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',

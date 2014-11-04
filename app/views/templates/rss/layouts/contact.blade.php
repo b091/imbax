@@ -57,7 +57,6 @@
                     if($.isEmptyObject(response) == false)
                     {
                         $.each(response, function(key, value){
-                            console.log(key, value);
                            $("#send-form :input[name='" + key + "']").parent().addClass('has-error');
                         });
                     }

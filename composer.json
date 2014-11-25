@@ -1,12 +1,16 @@
 {
     "name": "Imbax",
     "description": "The IMBA Shit :]",
-    "keywords": ["imba", "laravel4", "angularjs"],
+    "keywords": [
+        "imba",
+        "laravel4",
+        "angularjs"
+    ],
     "require": {
-        "laravel/framework": "4.0.*",
+        "laravel/framework": "4.2.*",
         "barryvdh/elfinder-bundle": "dev-master",
         "bkwld/croppa": "~3.0",
-        "blueimp/bootstrap-image-gallery": "3.1.0"
+        "phpunit/phpunit": "3.7.*"
     },
     "autoload": {
         "classmap": [
@@ -35,18 +39,5 @@
     "config": {
         "preferred-install": "dist"
     },
-    "minimum-stability": "dev",
-    "repositories" : [
-        {
-               "type": "package",
-               "package": {
-                   "name": "blueimp/bootstrap-image-gallery",
-                   "version": "3.1.0",
-                   "dist": {
-                       "url": "https://github.com/blueimp/Bootstrap-Image-Gallery/archive/3.1.0.zip",
-                       "type": "zip"
-                   }
-               }
-           }
-    ]
+    "minimum-stability": "dev"
 }

@@ -9,7 +9,7 @@
     "require": {
         "laravel/framework": "4.2.*",
         "barryvdh/elfinder-bundle": "dev-master",
-        "bkwld/croppa": "~3.0",
+        "bkwld/croppa": "3.4.2",
         "phpunit/phpunit": "3.7.*"
     },
     "autoload": {

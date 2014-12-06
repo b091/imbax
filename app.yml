@@ -1,0 +1,23 @@
+application: gae-laravel4-imbax
+version: 1
+runtime: php
+api_version: 1
+
+handlers:
+
+- url: /assets
+  static_dir: public/assets
+
+- url: /files
+  static_dir: public/files
+
+- url: /templates
+  static_dir: public/templates
+
+- url: /favicon\.ico
+  static_files: public/favicon.ico
+  upload: public/favicon\.ico
+
+- url: /.*
+  script: public/index.php
+

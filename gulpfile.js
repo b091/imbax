@@ -9,18 +9,17 @@ var gulp = require('gulp'),
 
 // Paths variables
 var paths = {
-    'dev': {
-        'less': './public/dev/less/',
-        'scss': './public/dev/scss/',
-        'js': './public/dev/js/',
-        'vendor': './public/dev/vendor/'
+    dev: {
+        less: './public/dev/less/',
+        scss: './public/dev/scss/',
+        js: './public/dev/js/',
+        vendor: './public/dev/vendor/'
     },
-    'assets': {
-        'css': './public/assets/css/',
-        'js': './public/assets/js/',
-        'vendor': './public/assets/bower_vendor/'
+    assets: {
+        css: './public/assets/css/',
+        js: './public/assets/js/',
+        vendor: './public/assets/bower_vendor/'
     }
-
 };
 
 // --- TASKS
